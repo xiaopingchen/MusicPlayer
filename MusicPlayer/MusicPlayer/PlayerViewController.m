@@ -35,7 +35,7 @@
 - (SidebarViewController *)leftSidebarViewController
 {
 	if (!_leftSidebarViewController) {
-		_leftSidebarViewController = [[SidebarViewController alloc] initWithStyle:UITableViewStylePlain];
+		_leftSidebarViewController = [SidebarViewController sharedInstance];
 		CGRect appFrame = self.navigationController.applicationViewFrame;
 		_leftSidebarViewController.view.frame = CGRectMake(0, appFrame.origin.y, kSidebarWidth, appFrame.size.height);
 		_leftSidebarViewController.sidebarDelegate = self;

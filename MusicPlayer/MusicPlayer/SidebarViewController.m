@@ -11,6 +11,7 @@
 #define kTableRows 4
 #define kTableSections 1
 #define kTableRowHeight 88
+#define kSidebarWidth 130
 
 @interface SidebarViewController ()
 
@@ -20,11 +21,24 @@
 
 @synthesize sidebarDelegate = _sidebarDelegate;
 
++ (SidebarViewController *)sharedInstance
+{
+	static SidebarViewController *sidebarViewController = nil;
+    @synchronized(self) {
+        if (sidebarViewController == nil)
+            sidebarViewController = [[self alloc] initWithStyle:UITableViewStylePlain];
+    }
+	return sidebarViewController;
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+		CGRect appFrame = [[UIScreen mainScreen] applicationFrame];
+		CGRect expectedFrame = [self.view convertRect:appFrame fromView:nil];
+		self.view.frame = CGRectMake(0, expectedFrame.origin.y, kSidebarWidth, expectedFrame.size.height);
     }
     return self;
 }

@@ -126,7 +126,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-1437" y="-235"/>
+            <point key="canvasLocation" x="-557" y="-963"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="07A-ay-XHw">
@@ -150,7 +150,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-1963" y="-235"/>
+            <point key="canvasLocation" x="-1083" y="-963"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="Os4-6t-AxI">
@@ -169,7 +169,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-1964" y="389"/>
+            <point key="canvasLocation" x="-1084" y="-339"/>
         </scene>
         <!--Songs View Controller-->
         <scene sceneID="sgT-GO-cNr">
@@ -199,7 +199,7 @@
                     <navigationItem key="navigationItem" id="mBa-Dd-hwZ"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-1442" y="394"/>
+            <point key="canvasLocation" x="-562" y="-334"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HeY-hg-0s6">
@@ -220,7 +220,7 @@
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="-2622" y="395"/>
+            <point key="canvasLocation" x="-1742" y="-333"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="uBV-3K-5VO">
@@ -239,7 +239,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-1963" y="1013"/>
+            <point key="canvasLocation" x="-1083" y="285"/>
         </scene>
         <!--Albums View Controller-->
         <scene sceneID="cgO-JZ-yUM">
@@ -269,7 +269,7 @@
                     <navigationItem key="navigationItem" id="EzB-dY-1qM"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-1437" y="1013"/>
+            <point key="canvasLocation" x="-557" y="285"/>
         </scene>
         <!--Artists View Controller-->
         <scene sceneID="xXO-x9-y2R">
@@ -299,7 +299,7 @@
                     <navigationItem key="navigationItem" id="rN9-Jl-K45"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-1430" y="1638"/>
+            <point key="canvasLocation" x="-550" y="910"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="tQM-Bs-gh5">
@@ -318,7 +318,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-1971" y="1631"/>
+            <point key="canvasLocation" x="-1091" y="903"/>
         </scene>
     </scenes>
     <resources>
@@ -327,6 +327,32 @@
         <image name="noArtworkImage.png" width="200" height="200"/>
         <image name="playButton.png" width="40" height="30"/>
     </resources>
+    <classes>
+        <class className="AlbumsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlbumsViewController.h"/>
+        </class>
+        <class className="ArtistsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ArtistsViewController.h"/>
+        </class>
+        <class className="PlayerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="nextSong:"/>
+                <relationship kind="action" name="playPause:"/>
+                <relationship kind="action" name="previousSong:"/>
+                <relationship kind="action" name="volumeChanged:"/>
+                <relationship kind="outlet" name="albumLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="artistAlbum" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="artworkImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="playPauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="songLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="volumeSlider" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+        <class className="SongsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SongsViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

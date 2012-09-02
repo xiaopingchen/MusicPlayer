@@ -13,6 +13,8 @@
 
 @property (nonatomic, weak) id <SidebarViewControllerDelegate> sidebarDelegate;
 
++ (SidebarViewController *)sharedInstance;
+
 @end
 
 @protocol SidebarViewControllerDelegate
