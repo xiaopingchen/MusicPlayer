@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void)revealLeftSidebar:(id)sender;
+
 @end

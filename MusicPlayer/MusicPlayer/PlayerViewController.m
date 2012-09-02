@@ -8,22 +8,19 @@
 
 #import "PlayerViewController.h"
 #import "SidebarViewController.h"
+#import "AppDelegate.h"
 #import "UINavigationItem+JTRevealSidebarV2.h"
 #import "UIViewController+JTRevealSidebarV2.h"
 
 #define kSidebarWidth 130
 
-@interface PlayerViewController () <SidebarViewControllerDelegate>
-
+@interface PlayerViewController ()
 - (void)registerMediaPlayerNotifications;
 - (void)removeMediaPlayerNotifications;
-
 @end
 
 @implementation PlayerViewController
 
-@synthesize leftSelectedIndexPath = _leftSelectedIndexPath;
-@synthesize leftSidebarViewController = _leftSidebarViewController;
 @synthesize musicPlayer = _musicPlayer;
 @synthesize artworkImageView = _artworkImageView;
 @synthesize songLabel = _songLabel;
@@ -32,16 +29,6 @@
 @synthesize playPauseButton = _playPauseButton;
 @synthesize volumeSlider = _volumeSlider;
 
-- (SidebarViewController *)leftSidebarViewController
-{
-	if (!_leftSidebarViewController) {
-		_leftSidebarViewController = [SidebarViewController sharedInstance];
-		CGRect appFrame = self.navigationController.applicationViewFrame;
-		_leftSidebarViewController.view.frame = CGRectMake(0, appFrame.origin.y, kSidebarWidth, appFrame.size.height);
-		_leftSidebarViewController.sidebarDelegate = self;
-	}
-	return _leftSidebarViewController;
-}
 
 // change playPause button based on player state
 - (void)togglePlayPause
@@ -165,7 +152,7 @@
     [super viewDidLoad];
 		
 	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(revealLeftSidebar:)];
-	self.navigationItem.revealSidebarDelegate = self;
+//	self.navigationItem.revealSidebarDelegate = self;
 	
 	// setup music player
 	self.musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
@@ -196,32 +183,8 @@
 #pragma mark - Mark Action
 
 - (void)revealLeftSidebar:(id)sender {
-    [self.navigationController toggleRevealState:JTRevealedStateLeft];
-}
-
-#pragma mark - JTRevealSidebarDelegate
-
-- (UIView *)viewForLeftSidebar
-{
-	return self.leftSidebarViewController.tableView;
-}
-
-// Optional delegate methods for additional configuration after reveal state changed
-- (void)didChangeRevealedStateForViewController:(UIViewController *)viewController
-{
-	
-}
-
-#pragma mark SidebarViewControllerDelegate
-
-- (void)sidebarViewController:(SidebarViewController *)sidebarViewController didSelectViewControllerAtIndexPath:(NSIndexPath *)indexPath
-{
-	[self.navigationController setRevealedState:JTRevealedStateNo];
-	self.tabBarController.selectedIndex = indexPath.row;
-}
-
-- (NSIndexPath *)lastSelectedIndexPathForSidebarViewController:(SidebarViewController *)sidebarViewController {
-    return self.leftSelectedIndexPath;
+	AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	[appDelegate revealLeftSidebar:sender];
 }
 
 #pragma mark - 
@@ -245,4 +208,5 @@
 		[self.musicPlayer pause];
 	}
 }
+
 @end

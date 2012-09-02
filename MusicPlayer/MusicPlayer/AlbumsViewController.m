@@ -7,6 +7,7 @@
 //
 
 #import "AlbumsViewController.h"
+#import "AppDelegate.h"
 
 @interface AlbumsViewController ()
 
@@ -26,6 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
+	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(revealLeftSidebar:)];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -45,6 +48,12 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+- (void)revealLeftSidebar:(id)sender {
+	AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	[appDelegate revealLeftSidebar:sender];
+}
+
 
 #pragma mark - Table view data source
 

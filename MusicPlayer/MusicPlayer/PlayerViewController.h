@@ -7,17 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JTRevealSidebarV2Delegate.h"
 #import <MediaPlayer/MediaPlayer.h>
 
-@class SidebarViewController;
+@interface PlayerViewController : UIViewController
 
-@interface PlayerViewController : UIViewController <JTRevealSidebarV2Delegate>
-
-@property (nonatomic, strong) SidebarViewController *leftSidebarViewController;
-@property (nonatomic, strong) NSIndexPath *leftSelectedIndexPath;
 @property (nonatomic, strong) MPMusicPlayerController *musicPlayer;
-
 @property (weak, nonatomic) IBOutlet UIImageView *artworkImageView;
 @property (weak, nonatomic) IBOutlet UILabel *songLabel;
 @property (weak, nonatomic) IBOutlet UILabel *albumLabel;

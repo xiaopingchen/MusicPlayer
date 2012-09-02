@@ -7,40 +7,65 @@
 //
 
 #import "AppDelegate.h"
+#import "JTRevealSidebarV2Delegate.h"
+#import "SidebarViewController.h"
+#import "UIViewController+JTRevealSidebarV2.h"
+#import "UINavigationItem+JTRevealSidebarV2.h"
+
+@interface AppDelegate () <JTRevealSidebarV2Delegate, SidebarViewControllerDelegate>
+@property (nonatomic, strong) SidebarViewController  *leftSidebarViewController;
+@property (nonatomic, strong) NSIndexPath *leftSelectedIndexPath;
+@end
+
 
 @implementation AppDelegate
 
+@synthesize leftSidebarViewController = _leftSidebarViewController;
+@synthesize leftSelectedIndexPath = _leftSelectedIndexPath;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+	UITabBarController *tbController = (UITabBarController *)self.window.rootViewController;
+	for (UINavigationController *navController in tbController.viewControllers) {
+		navController.navigationItem.revealSidebarDelegate = self;
+	}
+	
+	self.leftSidebarViewController = [[SidebarViewController alloc] initWithStyle:UITableViewStylePlain];
+	self.leftSidebarViewController.sidebarDelegate = self;
+	
     return YES;
 }
-							
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-	// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-	// Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
+- (void)revealLeftSidebar:(id)sender {
+	UITabBarController *tbController = (UITabBarController *)self.window.rootViewController;
+    [tbController toggleRevealState:JTRevealedStateLeft];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
+#pragma mark - JTRevealSidebarDelegate
+
+- (UIView *)viewForLeftSidebar
 {
-	// Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-	// If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+	return self.leftSidebarViewController.tableView;
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
+// Optional delegate methods for additional configuration after reveal state changed
+- (void)didChangeRevealedStateForViewController:(UIViewController *)viewController
 {
-	// Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+	
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
+#pragma mark SidebarViewControllerDelegate
+
+- (void)sidebarViewController:(SidebarViewController *)sidebarViewController didSelectViewControllerAtIndexPath:(NSIndexPath *)indexPath
 {
-	// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+	UITabBarController *tbController = (UITabBarController *)self.window.rootViewController;
+	tbController.selectedIndex = indexPath.row;
+	[self revealLeftSidebar:nil];
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+- (NSIndexPath *)lastSelectedIndexPathForSidebarViewController:(SidebarViewController *)sidebarViewController {
+    return self.leftSelectedIndexPath;
 }
 
+	
 @end

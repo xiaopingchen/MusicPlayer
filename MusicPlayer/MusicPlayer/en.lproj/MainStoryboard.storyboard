@@ -175,7 +175,7 @@
         <scene sceneID="sgT-GO-cNr">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rD-0n-Xkf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="247-q7-RsV" customClass="SongsViewController" sceneMemberID="viewController">
+                <tableViewController wantsFullScreenLayout="YES" hidesBottomBarWhenPushed="YES" id="247-q7-RsV" customClass="SongsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WCv-wR-FB4">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -245,7 +245,7 @@
         <scene sceneID="cgO-JZ-yUM">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZEM-eq-dPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="ZYJ-pS-rrI" customClass="AlbumsViewController" sceneMemberID="viewController">
+                <tableViewController wantsFullScreenLayout="YES" hidesBottomBarWhenPushed="YES" id="ZYJ-pS-rrI" customClass="AlbumsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1aA-7N-LxR">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -275,7 +275,7 @@
         <scene sceneID="xXO-x9-y2R">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="civ-3e-QlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="F2h-9M-aqk" customClass="ArtistsViewController" sceneMemberID="viewController">
+                <tableViewController wantsFullScreenLayout="YES" hidesBottomBarWhenPushed="YES" id="F2h-9M-aqk" customClass="ArtistsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YeY-wa-o2j">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
