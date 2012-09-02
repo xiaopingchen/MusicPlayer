@@ -8,8 +8,9 @@
 
 #import "SidebarViewController.h"
 
-#define kTableRows 3
+#define kTableRows 4
 #define kTableSections 1
+#define kTableRowHeight 88
 
 @interface SidebarViewController ()
 
@@ -58,6 +59,11 @@
 
 #pragma mark - Table view data source
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return kTableRowHeight;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return kTableSections;
@@ -79,8 +85,23 @@
 	}
 	
     // Configure the cell...
-	
-	cell.textLabel.text = @"Music";
+	switch (indexPath.row) {
+		case 0:
+			cell.textLabel.text = @"Player";
+			break;
+		case 1:
+			cell.textLabel.text = @"Songs";
+			break;
+		case 2:
+			cell.textLabel.text = @"Albums";
+			break;
+		case 3:
+			cell.textLabel.text = @"Artists";
+			break;
+			
+		default:
+			break;
+	}
     
     return cell;
 }

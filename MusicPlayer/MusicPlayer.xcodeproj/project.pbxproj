@@ -16,8 +16,17 @@
 		59CD25B315F31F0A00030DC2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59CD25B115F31F0A00030DC2 /* MainStoryboard.storyboard */; };
 		59CD25C215F31F4300030DC2 /* UINavigationItem+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD25BF15F31F4300030DC2 /* UINavigationItem+JTRevealSidebarV2.m */; };
 		59CD25C315F31F4300030DC2 /* UIViewController+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD25C115F31F4300030DC2 /* UIViewController+JTRevealSidebarV2.m */; };
-		59CD25C915F31F9900030DC2 /* PlayerViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD25C615F31F9900030DC2 /* PlayerViewViewController.m */; };
+		59CD25C915F31F9900030DC2 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD25C615F31F9900030DC2 /* PlayerViewController.m */; };
 		59CD25CA15F31F9900030DC2 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD25C815F31F9900030DC2 /* SidebarViewController.m */; };
+		59CD261B15F335C400030DC2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59CD261A15F335C400030DC2 /* MediaPlayer.framework */; };
+		59CD261F15F33A9D00030DC2 /* AlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD261E15F33A9D00030DC2 /* AlbumsViewController.m */; };
+		59CD262215F33ABB00030DC2 /* ArtistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD262115F33ABB00030DC2 /* ArtistsViewController.m */; };
+		59CD262515F33ACC00030DC2 /* SongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CD262415F33ACC00030DC2 /* SongsViewController.m */; };
+		59CD262C15F33B5000030DC2 /* NextButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 59CD262715F33B5000030DC2 /* NextButton.png */; };
+		59CD262D15F33B5000030DC2 /* noArtworkImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 59CD262815F33B5000030DC2 /* noArtworkImage.png */; };
+		59CD262E15F33B5000030DC2 /* pauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 59CD262915F33B5000030DC2 /* pauseButton.png */; };
+		59CD262F15F33B5000030DC2 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 59CD262A15F33B5000030DC2 /* playButton.png */; };
+		59CD263015F33B5000030DC2 /* PreviousButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 59CD262B15F33B5000030DC2 /* PreviousButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,10 +46,22 @@
 		59CD25BF15F31F4300030DC2 /* UINavigationItem+JTRevealSidebarV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+JTRevealSidebarV2.m"; sourceTree = "<group>"; };
 		59CD25C015F31F4300030DC2 /* UIViewController+JTRevealSidebarV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JTRevealSidebarV2.h"; sourceTree = "<group>"; };
 		59CD25C115F31F4300030DC2 /* UIViewController+JTRevealSidebarV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JTRevealSidebarV2.m"; sourceTree = "<group>"; };
-		59CD25C515F31F9900030DC2 /* PlayerViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewViewController.h; sourceTree = "<group>"; };
-		59CD25C615F31F9900030DC2 /* PlayerViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewViewController.m; sourceTree = "<group>"; };
+		59CD25C515F31F9900030DC2 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		59CD25C615F31F9900030DC2 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		59CD25C715F31F9900030DC2 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
 		59CD25C815F31F9900030DC2 /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
+		59CD261A15F335C400030DC2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		59CD261D15F33A9D00030DC2 /* AlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsViewController.h; sourceTree = "<group>"; };
+		59CD261E15F33A9D00030DC2 /* AlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsViewController.m; sourceTree = "<group>"; };
+		59CD262015F33ABB00030DC2 /* ArtistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistsViewController.h; sourceTree = "<group>"; };
+		59CD262115F33ABB00030DC2 /* ArtistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistsViewController.m; sourceTree = "<group>"; };
+		59CD262315F33ACC00030DC2 /* SongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsViewController.h; sourceTree = "<group>"; };
+		59CD262415F33ACC00030DC2 /* SongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongsViewController.m; sourceTree = "<group>"; };
+		59CD262715F33B5000030DC2 /* NextButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NextButton.png; sourceTree = "<group>"; };
+		59CD262815F33B5000030DC2 /* noArtworkImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noArtworkImage.png; sourceTree = "<group>"; };
+		59CD262915F33B5000030DC2 /* pauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseButton.png; sourceTree = "<group>"; };
+		59CD262A15F33B5000030DC2 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
+		59CD262B15F33B5000030DC2 /* PreviousButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PreviousButton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59CD261B15F335C400030DC2 /* MediaPlayer.framework in Frameworks */,
 				59CD25A015F31F0A00030DC2 /* UIKit.framework in Frameworks */,
 				59CD25A215F31F0A00030DC2 /* Foundation.framework in Frameworks */,
 				59CD25A415F31F0A00030DC2 /* CoreGraphics.framework in Frameworks */,
@@ -77,6 +99,7 @@
 		59CD259E15F31F0A00030DC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				59CD261A15F335C400030DC2 /* MediaPlayer.framework */,
 				59CD259F15F31F0A00030DC2 /* UIKit.framework */,
 				59CD25A115F31F0A00030DC2 /* Foundation.framework */,
 				59CD25A315F31F0A00030DC2 /* CoreGraphics.framework */,
@@ -91,8 +114,14 @@
 				59CD25AE15F31F0A00030DC2 /* AppDelegate.h */,
 				59CD25AF15F31F0A00030DC2 /* AppDelegate.m */,
 				59CD25B115F31F0A00030DC2 /* MainStoryboard.storyboard */,
-				59CD25C515F31F9900030DC2 /* PlayerViewViewController.h */,
-				59CD25C615F31F9900030DC2 /* PlayerViewViewController.m */,
+				59CD25C515F31F9900030DC2 /* PlayerViewController.h */,
+				59CD25C615F31F9900030DC2 /* PlayerViewController.m */,
+				59CD262315F33ACC00030DC2 /* SongsViewController.h */,
+				59CD262415F33ACC00030DC2 /* SongsViewController.m */,
+				59CD261D15F33A9D00030DC2 /* AlbumsViewController.h */,
+				59CD261E15F33A9D00030DC2 /* AlbumsViewController.m */,
+				59CD262015F33ABB00030DC2 /* ArtistsViewController.h */,
+				59CD262115F33ABB00030DC2 /* ArtistsViewController.m */,
 				59CD25C715F31F9900030DC2 /* SidebarViewController.h */,
 				59CD25C815F31F9900030DC2 /* SidebarViewController.m */,
 				59CD25A615F31F0A00030DC2 /* Supporting Files */,
@@ -103,6 +132,7 @@
 		59CD25A615F31F0A00030DC2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				59CD262615F33B5000030DC2 /* Images */,
 				59CD25A715F31F0A00030DC2 /* MusicPlayer-Info.plist */,
 				59CD25A815F31F0A00030DC2 /* InfoPlist.strings */,
 				59CD25AB15F31F0A00030DC2 /* main.m */,
@@ -129,6 +159,18 @@
 				59CD25BC15F31F4300030DC2 /* JTRevealSidebarV2 */,
 			);
 			name = OpenSource;
+			sourceTree = "<group>";
+		};
+		59CD262615F33B5000030DC2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				59CD262715F33B5000030DC2 /* NextButton.png */,
+				59CD262815F33B5000030DC2 /* noArtworkImage.png */,
+				59CD262915F33B5000030DC2 /* pauseButton.png */,
+				59CD262A15F33B5000030DC2 /* playButton.png */,
+				59CD262B15F33B5000030DC2 /* PreviousButton.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +227,11 @@
 			files = (
 				59CD25AA15F31F0A00030DC2 /* InfoPlist.strings in Resources */,
 				59CD25B315F31F0A00030DC2 /* MainStoryboard.storyboard in Resources */,
+				59CD262C15F33B5000030DC2 /* NextButton.png in Resources */,
+				59CD262D15F33B5000030DC2 /* noArtworkImage.png in Resources */,
+				59CD262E15F33B5000030DC2 /* pauseButton.png in Resources */,
+				59CD262F15F33B5000030DC2 /* playButton.png in Resources */,
+				59CD263015F33B5000030DC2 /* PreviousButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,8 +262,11 @@
 				59CD25B015F31F0A00030DC2 /* AppDelegate.m in Sources */,
 				59CD25C215F31F4300030DC2 /* UINavigationItem+JTRevealSidebarV2.m in Sources */,
 				59CD25C315F31F4300030DC2 /* UIViewController+JTRevealSidebarV2.m in Sources */,
-				59CD25C915F31F9900030DC2 /* PlayerViewViewController.m in Sources */,
+				59CD25C915F31F9900030DC2 /* PlayerViewController.m in Sources */,
 				59CD25CA15F31F9900030DC2 /* SidebarViewController.m in Sources */,
+				59CD261F15F33A9D00030DC2 /* AlbumsViewController.m in Sources */,
+				59CD262215F33ABB00030DC2 /* ArtistsViewController.m in Sources */,
+				59CD262515F33ACC00030DC2 /* SongsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +384,7 @@
 				59CD25BB15F31F0A00030DC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
