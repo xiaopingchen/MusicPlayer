@@ -10,4 +10,6 @@
 
 @interface AlbumsViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray *albums;
+
 @end

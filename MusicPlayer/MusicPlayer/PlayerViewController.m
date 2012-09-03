@@ -187,7 +187,7 @@
 	[appDelegate revealLeftSidebar:sender];
 }
 
-#pragma mark - 
+#pragma mark - Control Actions
 
 - (IBAction)volumeChanged:(id)sender {
 	self.musicPlayer.volume = self.volumeSlider.value;

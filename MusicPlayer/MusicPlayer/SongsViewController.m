@@ -6,7 +6,9 @@
 //  Copyright (c) 2012 Jiang Xiao. All rights reserved.
 //
 
+
 #import "SongsViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 #import "AppDelegate.h"
 
 @interface SongsViewController ()
@@ -14,6 +16,8 @@
 @end
 
 @implementation SongsViewController
+
+@synthesize songs = _songs;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,6 +33,10 @@
     [super viewDidLoad];
 	
 	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(revealLeftSidebar:)];
+	
+	// access songs from ipod library
+	MPMediaQuery *query = [MPMediaQuery songsQuery];
+	self.songs = query.items;
 }
 
 - (void)viewDidUnload
@@ -54,66 +62,29 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.songs.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"MediaItemCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-    
+	
+	MPMediaItem *song = [self.songs objectAtIndex:indexPath.row];
+	MPMediaItemArtwork *artWork = [song valueForProperty: MPMediaItemPropertyArtwork];
+	cell.imageView.image = [artWork imageWithSize:cell.imageView.bounds.size];
+    cell.textLabel.text = [song valueForProperty:MPMediaItemPropertyTitle];
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 

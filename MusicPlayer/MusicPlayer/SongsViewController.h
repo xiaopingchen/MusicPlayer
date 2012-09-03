@@ -10,4 +10,6 @@
 
 @interface SongsViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray *songs;
+
 @end
