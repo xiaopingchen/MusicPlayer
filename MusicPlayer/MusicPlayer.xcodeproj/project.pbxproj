@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		592B4AD116060CBC00AD715E /* FXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B4ACE16060CBC00AD715E /* FXImageView.m */; };
+		592B4AD216060CBC00AD715E /* UIImage+FX.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B4AD016060CBC00AD715E /* UIImage+FX.m */; };
+		598E80B01605DAD300FCC935 /* sidebar_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80A41605DAD300FCC935 /* sidebar_1.png */; };
+		598E80B11605DAD300FCC935 /* sidebar_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80A51605DAD300FCC935 /* sidebar_1@2x.png */; };
+		598E80B21605DAD300FCC935 /* sidebar_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80A61605DAD300FCC935 /* sidebar_2.png */; };
+		598E80B31605DAD300FCC935 /* sidebar_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80A71605DAD300FCC935 /* sidebar_2@2x.png */; };
+		598E80B41605DAD300FCC935 /* sidebar_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80A81605DAD300FCC935 /* sidebar_3.png */; };
+		598E80B51605DAD300FCC935 /* sidebar_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80A91605DAD300FCC935 /* sidebar_3@2x.png */; };
+		598E80B61605DAD300FCC935 /* sidebar_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80AA1605DAD300FCC935 /* sidebar_4.png */; };
+		598E80B71605DAD300FCC935 /* sidebar_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80AB1605DAD300FCC935 /* sidebar_4@2x.png */; };
+		598E80B81605DAD300FCC935 /* sidebar_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80AC1605DAD300FCC935 /* sidebar_5.png */; };
+		598E80B91605DAD300FCC935 /* sidebar_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80AD1605DAD300FCC935 /* sidebar_5@2x.png */; };
+		598E80BA1605DAD300FCC935 /* sidebar_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80AE1605DAD300FCC935 /* sidebar_6.png */; };
+		598E80BB1605DAD300FCC935 /* sidebar_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80AF1605DAD300FCC935 /* sidebar_6@2x.png */; };
+		598E80BE1605DC8800FCC935 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 598E80BD1605DC8800FCC935 /* AlbumViewController.m */; };
+		598E80C11605DE8A00FCC935 /* sidebar_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80BF1605DE8900FCC935 /* sidebar_button.png */; };
+		598E80C21605DE8A00FCC935 /* sidebar_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80C01605DE8900FCC935 /* sidebar_button@2x.png */; };
+		598E80CA1605E57F00FCC935 /* SEMasonryView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598E80C91605E57F00FCC935 /* SEMasonryView.framework */; };
+		598E80D21605EADE00FCC935 /* AlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 598E80D11605EADB00FCC935 /* AlbumCell.m */; };
+		598E80D41605EE9400FCC935 /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 598E80D31605EE9400FCC935 /* AlbumCell.xib */; };
 		59CD25A015F31F0A00030DC2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59CD259F15F31F0A00030DC2 /* UIKit.framework */; };
 		59CD25A215F31F0A00030DC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59CD25A115F31F0A00030DC2 /* Foundation.framework */; };
 		59CD25A415F31F0A00030DC2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59CD25A315F31F0A00030DC2 /* CoreGraphics.framework */; };
@@ -30,6 +50,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		592B4ACD16060CBC00AD715E /* FXImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXImageView.h; sourceTree = "<group>"; };
+		592B4ACE16060CBC00AD715E /* FXImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXImageView.m; sourceTree = "<group>"; };
+		592B4ACF16060CBC00AD715E /* UIImage+FX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FX.h"; sourceTree = "<group>"; };
+		592B4AD016060CBC00AD715E /* UIImage+FX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FX.m"; sourceTree = "<group>"; };
+		598E80A41605DAD300FCC935 /* sidebar_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidebar_1.png; sourceTree = "<group>"; };
+		598E80A51605DAD300FCC935 /* sidebar_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar_1@2x.png"; sourceTree = "<group>"; };
+		598E80A61605DAD300FCC935 /* sidebar_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidebar_2.png; sourceTree = "<group>"; };
+		598E80A71605DAD300FCC935 /* sidebar_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar_2@2x.png"; sourceTree = "<group>"; };
+		598E80A81605DAD300FCC935 /* sidebar_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidebar_3.png; sourceTree = "<group>"; };
+		598E80A91605DAD300FCC935 /* sidebar_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar_3@2x.png"; sourceTree = "<group>"; };
+		598E80AA1605DAD300FCC935 /* sidebar_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidebar_4.png; sourceTree = "<group>"; };
+		598E80AB1605DAD300FCC935 /* sidebar_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar_4@2x.png"; sourceTree = "<group>"; };
+		598E80AC1605DAD300FCC935 /* sidebar_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidebar_5.png; sourceTree = "<group>"; };
+		598E80AD1605DAD300FCC935 /* sidebar_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar_5@2x.png"; sourceTree = "<group>"; };
+		598E80AE1605DAD300FCC935 /* sidebar_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidebar_6.png; sourceTree = "<group>"; };
+		598E80AF1605DAD300FCC935 /* sidebar_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar_6@2x.png"; sourceTree = "<group>"; };
+		598E80BC1605DC8800FCC935 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
+		598E80BD1605DC8800FCC935 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
+		598E80BF1605DE8900FCC935 /* sidebar_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidebar_button.png; sourceTree = "<group>"; };
+		598E80C01605DE8900FCC935 /* sidebar_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar_button@2x.png"; sourceTree = "<group>"; };
+		598E80C91605E57F00FCC935 /* SEMasonryView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SEMasonryView.framework; sourceTree = "<group>"; };
+		598E80D01605EADA00FCC935 /* AlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCell.h; sourceTree = "<group>"; };
+		598E80D11605EADB00FCC935 /* AlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCell.m; sourceTree = "<group>"; };
+		598E80D31605EE9400FCC935 /* AlbumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
 		59CD259B15F31F0A00030DC2 /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59CD259F15F31F0A00030DC2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		59CD25A115F31F0A00030DC2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,12 +117,43 @@
 				59CD25A015F31F0A00030DC2 /* UIKit.framework in Frameworks */,
 				59CD25A215F31F0A00030DC2 /* Foundation.framework in Frameworks */,
 				59CD25A415F31F0A00030DC2 /* CoreGraphics.framework in Frameworks */,
+				598E80CA1605E57F00FCC935 /* SEMasonryView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		592B4AD416060CC500AD715E /* FXImageView */ = {
+			isa = PBXGroup;
+			children = (
+				592B4ACD16060CBC00AD715E /* FXImageView.h */,
+				592B4ACE16060CBC00AD715E /* FXImageView.m */,
+				592B4ACF16060CBC00AD715E /* UIImage+FX.h */,
+				592B4AD016060CBC00AD715E /* UIImage+FX.m */,
+			);
+			name = FXImageView;
+			sourceTree = "<group>";
+		};
+		598E80A21605DABB00FCC935 /* sidebars */ = {
+			isa = PBXGroup;
+			children = (
+				598E80A41605DAD300FCC935 /* sidebar_1.png */,
+				598E80A51605DAD300FCC935 /* sidebar_1@2x.png */,
+				598E80A61605DAD300FCC935 /* sidebar_2.png */,
+				598E80A71605DAD300FCC935 /* sidebar_2@2x.png */,
+				598E80A81605DAD300FCC935 /* sidebar_3.png */,
+				598E80A91605DAD300FCC935 /* sidebar_3@2x.png */,
+				598E80AA1605DAD300FCC935 /* sidebar_4.png */,
+				598E80AB1605DAD300FCC935 /* sidebar_4@2x.png */,
+				598E80AC1605DAD300FCC935 /* sidebar_5.png */,
+				598E80AD1605DAD300FCC935 /* sidebar_5@2x.png */,
+				598E80AE1605DAD300FCC935 /* sidebar_6.png */,
+				598E80AF1605DAD300FCC935 /* sidebar_6@2x.png */,
+			);
+			name = sidebars;
+			sourceTree = "<group>";
+		};
 		59CD259015F31F0A00030DC2 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +174,7 @@
 		59CD259E15F31F0A00030DC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				598E80C91605E57F00FCC935 /* SEMasonryView.framework */,
 				59CD261A15F335C400030DC2 /* MediaPlayer.framework */,
 				59CD259F15F31F0A00030DC2 /* UIKit.framework */,
 				59CD25A115F31F0A00030DC2 /* Foundation.framework */,
@@ -113,6 +189,9 @@
 				59CD25C415F31F4E00030DC2 /* OpenSource */,
 				59CD25AE15F31F0A00030DC2 /* AppDelegate.h */,
 				59CD25AF15F31F0A00030DC2 /* AppDelegate.m */,
+				598E80D01605EADA00FCC935 /* AlbumCell.h */,
+				598E80D11605EADB00FCC935 /* AlbumCell.m */,
+				598E80D31605EE9400FCC935 /* AlbumCell.xib */,
 				59CD25B115F31F0A00030DC2 /* MainStoryboard.storyboard */,
 				59CD25C515F31F9900030DC2 /* PlayerViewController.h */,
 				59CD25C615F31F9900030DC2 /* PlayerViewController.m */,
@@ -120,6 +199,8 @@
 				59CD262415F33ACC00030DC2 /* SongsViewController.m */,
 				59CD261D15F33A9D00030DC2 /* AlbumsViewController.h */,
 				59CD261E15F33A9D00030DC2 /* AlbumsViewController.m */,
+				598E80BC1605DC8800FCC935 /* AlbumViewController.h */,
+				598E80BD1605DC8800FCC935 /* AlbumViewController.m */,
 				59CD262015F33ABB00030DC2 /* ArtistsViewController.h */,
 				59CD262115F33ABB00030DC2 /* ArtistsViewController.m */,
 				59CD25C715F31F9900030DC2 /* SidebarViewController.h */,
@@ -156,6 +237,7 @@
 		59CD25C415F31F4E00030DC2 /* OpenSource */ = {
 			isa = PBXGroup;
 			children = (
+				592B4AD416060CC500AD715E /* FXImageView */,
 				59CD25BC15F31F4300030DC2 /* JTRevealSidebarV2 */,
 			);
 			name = OpenSource;
@@ -164,6 +246,9 @@
 		59CD262615F33B5000030DC2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				598E80BF1605DE8900FCC935 /* sidebar_button.png */,
+				598E80C01605DE8900FCC935 /* sidebar_button@2x.png */,
+				598E80A21605DABB00FCC935 /* sidebars */,
 				59CD262715F33B5000030DC2 /* NextButton.png */,
 				59CD262815F33B5000030DC2 /* noArtworkImage.png */,
 				59CD262915F33B5000030DC2 /* pauseButton.png */,
@@ -232,6 +317,21 @@
 				59CD262E15F33B5000030DC2 /* pauseButton.png in Resources */,
 				59CD262F15F33B5000030DC2 /* playButton.png in Resources */,
 				59CD263015F33B5000030DC2 /* PreviousButton.png in Resources */,
+				598E80B01605DAD300FCC935 /* sidebar_1.png in Resources */,
+				598E80B11605DAD300FCC935 /* sidebar_1@2x.png in Resources */,
+				598E80B21605DAD300FCC935 /* sidebar_2.png in Resources */,
+				598E80B31605DAD300FCC935 /* sidebar_2@2x.png in Resources */,
+				598E80B41605DAD300FCC935 /* sidebar_3.png in Resources */,
+				598E80B51605DAD300FCC935 /* sidebar_3@2x.png in Resources */,
+				598E80B61605DAD300FCC935 /* sidebar_4.png in Resources */,
+				598E80B71605DAD300FCC935 /* sidebar_4@2x.png in Resources */,
+				598E80B81605DAD300FCC935 /* sidebar_5.png in Resources */,
+				598E80B91605DAD300FCC935 /* sidebar_5@2x.png in Resources */,
+				598E80BA1605DAD300FCC935 /* sidebar_6.png in Resources */,
+				598E80BB1605DAD300FCC935 /* sidebar_6@2x.png in Resources */,
+				598E80C11605DE8A00FCC935 /* sidebar_button.png in Resources */,
+				598E80C21605DE8A00FCC935 /* sidebar_button@2x.png in Resources */,
+				598E80D41605EE9400FCC935 /* AlbumCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +367,10 @@
 				59CD261F15F33A9D00030DC2 /* AlbumsViewController.m in Sources */,
 				59CD262215F33ABB00030DC2 /* ArtistsViewController.m in Sources */,
 				59CD262515F33ACC00030DC2 /* SongsViewController.m in Sources */,
+				598E80BE1605DC8800FCC935 /* AlbumViewController.m in Sources */,
+				598E80D21605EADE00FCC935 /* AlbumCell.m in Sources */,
+				592B4AD116060CBC00AD715E /* FXImageView.m in Sources */,
+				592B4AD216060CBC00AD715E /* UIImage+FX.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +448,10 @@
 		59CD25BA15F31F0A00030DC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicPlayer/MusicPlayer-Prefix.pch";
 				INFOPLIST_FILE = "MusicPlayer/MusicPlayer-Info.plist";
@@ -356,6 +464,10 @@
 		59CD25BB15F31F0A00030DC2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicPlayer/MusicPlayer-Prefix.pch";
 				INFOPLIST_FILE = "MusicPlayer/MusicPlayer-Info.plist";

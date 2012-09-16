@@ -8,10 +8,10 @@
 
 #import "SidebarViewController.h"
 
-#define kTableRows 4
+#define kTableRows 6
 #define kTableSections 1
-#define kTableRowHeight 88
-#define kSidebarWidth 130
+#define kTableRowHeight 80
+#define kSidebarWidth 80
 
 @interface SidebarViewController ()
 
@@ -48,6 +48,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	self.tableView.scrollEnabled = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -95,28 +96,13 @@
     
 	if (!cell) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-		cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	}
 	
     // Configure the cell...
-	switch (indexPath.row) {
-		case 0:
-			cell.textLabel.text = @"Player";
-			break;
-		case 1:
-			cell.textLabel.text = @"Songs";
-			break;
-		case 2:
-			cell.textLabel.text = @"Albums";
-			break;
-		case 3:
-			cell.textLabel.text = @"Artists";
-			break;
-			
-		default:
-			break;
-	}
-    
+
+	NSString *imageName = [NSString stringWithFormat:@"sidebar_%d.png", indexPath.row + 1];
+	[cell.imageView setImage:[UIImage imageNamed:imageName]];
     return cell;
 }
 

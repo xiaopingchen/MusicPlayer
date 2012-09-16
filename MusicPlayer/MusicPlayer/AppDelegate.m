@@ -25,6 +25,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	[[UIApplication sharedApplication] setStatusBarHidden:YES];
+	
 	UITabBarController *tbController = (UITabBarController *)self.window.rootViewController;
 	for (UINavigationController *navController in tbController.viewControllers) {
 		navController.navigationItem.revealSidebarDelegate = self;
