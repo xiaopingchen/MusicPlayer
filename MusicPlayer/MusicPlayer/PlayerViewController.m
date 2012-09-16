@@ -15,12 +15,16 @@
 #define kSidebarWidth 130
 
 @interface PlayerViewController ()
+
+@property (nonatomic, strong) UIButton *sideBarButton;
+
 - (void)registerMediaPlayerNotifications;
 - (void)removeMediaPlayerNotifications;
 @end
 
 @implementation PlayerViewController
 
+@synthesize sideBarButton = _sideBarButton;
 @synthesize musicPlayer = _musicPlayer;
 @synthesize artworkImageView = _artworkImageView;
 @synthesize songLabel = _songLabel;
@@ -34,9 +38,9 @@
 - (void)togglePlayPause
 {
 	if (self.musicPlayer.playbackState == MPMusicPlaybackStatePlaying) {
-		[self.playPauseButton setImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
+		[self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
 	} else if (self.musicPlayer.playbackState == MPMusicPlaybackStatePaused) {
-		[self.playPauseButton setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
+		[self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
 	}
 }
 
@@ -119,14 +123,14 @@
     MPMusicPlaybackState playbackState = [self.musicPlayer playbackState];
 	
     if (playbackState == MPMusicPlaybackStatePaused) {
-        [self.playPauseButton setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
+        [self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
 		
     } else if (playbackState == MPMusicPlaybackStatePlaying) {
-        [self.playPauseButton setImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
+        [self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
 		
     } else if (playbackState == MPMusicPlaybackStateStopped) {
 		
-        [self.playPauseButton setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
+        [self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
         [self.musicPlayer stop];
     }
 }
@@ -138,12 +142,28 @@
 
 #pragma mark - Life Cycle
 
+- (void)setupArtwork
+{
+	self.artworkImageView.cornerRadius = self.artworkImageView.bounds.size.height / 2;
+	self.artworkImageView.reflectionScale = 0.5f;
+	self.artworkImageView.reflectionAlpha = 0.25f;
+	self.artworkImageView.reflectionGap = 10.0f;
+	self.artworkImageView.shadowOffset = CGSizeMake(0.0f, 2.0f);
+	self.artworkImageView.shadowBlur = 5.0f;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	self.view.backgroundColor = [UIColor colorWithRed:250.0/255.0 green:250.0/255.0 blue:250.0/255.0 alpha:1.0];
+	self.navigationController.navigationBarHidden = YES;
 		
-	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(revealLeftSidebar:)];
-//	self.navigationItem.revealSidebarDelegate = self;
+	// configure side bar button
+	self.sideBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	[self.sideBarButton setBackgroundImage:[UIImage imageNamed:@"sidebar_button.png"] forState:UIControlStateNormal];
+	[self.sideBarButton addTarget:self action:@selector(revealLeftSidebar:) forControlEvents:UIControlEventTouchUpInside];
+	self.sideBarButton.frame = CGRectMake(30, 30, 16, 16);
+	[self.view addSubview:self.sideBarButton];
 	
 	// setup music player
 	self.musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
@@ -151,6 +171,17 @@
 	self.volumeSlider.value = self.musicPlayer.volume;
 	[self togglePlayPause];
 	[self registerMediaPlayerNotifications];
+	
+	//
+	[self setupArtwork];
+	
+	// customize slider
+	UIImage *minImage = [[UIImage imageNamed:@"slider_min.png"]
+						 resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+	UIImage *maxImage = [[UIImage imageNamed:@"slider_max.png"]
+						 resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];	
+	[[UISlider appearance] setMaximumTrackImage:maxImage forState:UIControlStateNormal];
+	[[UISlider appearance] setMinimumTrackImage:minImage forState:UIControlStateNormal];
 }
 
 - (void)viewDidUnload

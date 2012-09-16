@@ -9,6 +9,7 @@
 #import "ArtistsViewController.h"
 #import "AppDelegate.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import "FXImageView.h"
 
 @interface ArtistsViewController ()
 
@@ -55,6 +56,11 @@
 
 #pragma mark - Table view data source
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return 110;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -71,14 +77,32 @@
 {
     static NSString *CellIdentifier = @"ArtistCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+	
     // Configure the cell...
 	MPMediaItemCollection *artist = [self.artists objectAtIndex:indexPath.row];
 	MPMediaItem *song = artist.items.lastObject;
 	MPMediaItemArtwork *artWork = [song valueForProperty:MPMediaItemPropertyArtwork];
-	cell.imageView.image = [artWork imageWithSize:cell.imageView.bounds.size];
-	cell.textLabel.text = [song valueForProperty:MPMediaItemPropertyArtist];
+	UIImage *cover = [artWork imageWithSize:CGSizeMake(110, 110)];
+	
+	UIView *container = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 110, 110)];
+	container.backgroundColor = [UIColor clearColor];
+	FXImageView *coverImage = [[FXImageView alloc] initWithFrame:CGRectMake(10, 10, 100, 100)];
+	coverImage.image = cover;
+	[container addSubview:coverImage];
+	[cell addSubview:container];
+	
+	UILabel *artistName = [[UILabel alloc] initWithFrame:CGRectMake(120, 30, 200, 30)];
+	artistName.font = [UIFont boldSystemFontOfSize:16];
+	artistName.textColor = [UIColor colorWithRed:92.0/255.0 green:194.0/255.0 blue:209.0/255.0 alpha:1.0];
+	artistName.text = [song valueForProperty:MPMediaItemPropertyArtist];
+	[cell addSubview:artistName];
 
+	UILabel *albumName = [[UILabel alloc] initWithFrame:CGRectMake(120, 60, 200, 30)];
+	albumName.font = [UIFont boldSystemFontOfSize:14];
+	albumName.textColor = [UIColor colorWithRed:236.0/255.0 green:130.0/255.0 blue:153.0/255.0 alpha:1.0];
+	albumName.text = [song valueForProperty:MPMediaItemPropertyAlbumTitle];
+	[cell addSubview:albumName];
+	
     return cell;
 }
 

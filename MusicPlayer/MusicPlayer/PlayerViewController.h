@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "FXImageView.h"
 
 @interface PlayerViewController : UIViewController
 
 @property (nonatomic, strong) MPMusicPlayerController *musicPlayer;
-@property (weak, nonatomic) IBOutlet UIImageView *artworkImageView;
+@property (weak, nonatomic) IBOutlet FXImageView *artworkImageView;
 @property (weak, nonatomic) IBOutlet UILabel *songLabel;
 @property (weak, nonatomic) IBOutlet UILabel *albumLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistAlbum;
