@@ -23,12 +23,12 @@
 @synthesize albums = _albums;
 @synthesize sideBarButton = _sideBarButton;
 
-#define kCellX  10
-#define kCellY 10
-#define kCellWidth  104
-#define kCellHeight 104
+#define kCellX  0
+#define kCellY 0
+#define kCellWidth  100
+#define kCellHeight 100
 #define kMansonryViewY      100
-#define kMansonryViewHeight 310
+#define kMansonryViewHeight 315
 
 #pragma mark - SEMasonryView
 
@@ -57,7 +57,7 @@
 		
 		// set a tag for your cell, so that you can refer to it when there are interactions like tapping etc..
 		cell.tag = [self.albums indexOfObject:album];
-		[cell setFrame:CGRectMake(10, 10, kCellWidth, kCellHeight)];
+		[cell setFrame:CGRectMake(kCellX, kCellY, kCellWidth, kCellHeight)];
 		
 		// finally, update the cell's controls with the data coming from the API
 		MPMediaItem *song = [album.items objectAtIndex:0];
@@ -118,7 +118,6 @@
 	MPMediaQuery *query = [MPMediaQuery albumsQuery];
 	self.albums = query.collections;
 	[self setupCell];
-
 }
 
 - (void)viewDidUnload

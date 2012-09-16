@@ -13,6 +13,13 @@
 - (void) updateCellInfo:(NSDictionary *)data
 {
 	imageView.image = [data objectForKey:@"artWork"];
+	
+	// use FXImageView
+
+	imageView.cornerRadius = imageView.frame.size.width / 2;
+	imageView.backgroundColor = [UIColor clearColor];
+    imageView.shadowOffset = CGSizeMake(1.0f, 1.0f);
+    imageView.shadowBlur = 5.0f;
 }
 
 

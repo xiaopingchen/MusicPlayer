@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "DictionaryHelper.h"
 #import "UIImageView+AFNetworking.h"
+#import "FXImageView.h"
 
 @interface SEMasonryCell : UIView {
     IBOutlet UILabel *titleLabel;
-    IBOutlet UIImageView *imageView;
+    IBOutlet FXImageView *imageView;
 }
 
 @property (nonatomic, strong) NSString *text;

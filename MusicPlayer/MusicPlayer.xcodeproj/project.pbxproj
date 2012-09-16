@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		592B4AD116060CBC00AD715E /* FXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B4ACE16060CBC00AD715E /* FXImageView.m */; };
 		592B4AD216060CBC00AD715E /* UIImage+FX.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B4AD016060CBC00AD715E /* UIImage+FX.m */; };
+		592B4AD716060DE400AD715E /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B4AD616060DE400AD715E /* iCarousel.m */; };
+		592B4ADA16060E0500AD715E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592B4AD916060E0500AD715E /* QuartzCore.framework */; };
+		592B4AE51606166600AD715E /* CoverFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B4AE41606166600AD715E /* CoverFlowViewController.m */; };
 		598E80B01605DAD300FCC935 /* sidebar_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80A41605DAD300FCC935 /* sidebar_1.png */; };
 		598E80B11605DAD300FCC935 /* sidebar_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80A51605DAD300FCC935 /* sidebar_1@2x.png */; };
 		598E80B21605DAD300FCC935 /* sidebar_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 598E80A61605DAD300FCC935 /* sidebar_2.png */; };
@@ -54,6 +57,11 @@
 		592B4ACE16060CBC00AD715E /* FXImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXImageView.m; sourceTree = "<group>"; };
 		592B4ACF16060CBC00AD715E /* UIImage+FX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FX.h"; sourceTree = "<group>"; };
 		592B4AD016060CBC00AD715E /* UIImage+FX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FX.m"; sourceTree = "<group>"; };
+		592B4AD516060DE400AD715E /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		592B4AD616060DE400AD715E /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		592B4AD916060E0500AD715E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		592B4AE31606166600AD715E /* CoverFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverFlowViewController.h; sourceTree = "<group>"; };
+		592B4AE41606166600AD715E /* CoverFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverFlowViewController.m; sourceTree = "<group>"; };
 		598E80A41605DAD300FCC935 /* sidebar_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidebar_1.png; sourceTree = "<group>"; };
 		598E80A51605DAD300FCC935 /* sidebar_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar_1@2x.png"; sourceTree = "<group>"; };
 		598E80A61605DAD300FCC935 /* sidebar_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidebar_2.png; sourceTree = "<group>"; };
@@ -113,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				592B4ADA16060E0500AD715E /* QuartzCore.framework in Frameworks */,
 				59CD261B15F335C400030DC2 /* MediaPlayer.framework in Frameworks */,
 				59CD25A015F31F0A00030DC2 /* UIKit.framework in Frameworks */,
 				59CD25A215F31F0A00030DC2 /* Foundation.framework in Frameworks */,
@@ -133,6 +142,15 @@
 				592B4AD016060CBC00AD715E /* UIImage+FX.m */,
 			);
 			name = FXImageView;
+			sourceTree = "<group>";
+		};
+		592B4AD816060DEC00AD715E /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				592B4AD516060DE400AD715E /* iCarousel.h */,
+				592B4AD616060DE400AD715E /* iCarousel.m */,
+			);
+			name = iCarousel;
 			sourceTree = "<group>";
 		};
 		598E80A21605DABB00FCC935 /* sidebars */ = {
@@ -174,6 +192,7 @@
 		59CD259E15F31F0A00030DC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				592B4AD916060E0500AD715E /* QuartzCore.framework */,
 				598E80C91605E57F00FCC935 /* SEMasonryView.framework */,
 				59CD261A15F335C400030DC2 /* MediaPlayer.framework */,
 				59CD259F15F31F0A00030DC2 /* UIKit.framework */,
@@ -203,6 +222,8 @@
 				598E80BD1605DC8800FCC935 /* AlbumViewController.m */,
 				59CD262015F33ABB00030DC2 /* ArtistsViewController.h */,
 				59CD262115F33ABB00030DC2 /* ArtistsViewController.m */,
+				592B4AE31606166600AD715E /* CoverFlowViewController.h */,
+				592B4AE41606166600AD715E /* CoverFlowViewController.m */,
 				59CD25C715F31F9900030DC2 /* SidebarViewController.h */,
 				59CD25C815F31F9900030DC2 /* SidebarViewController.m */,
 				59CD25A615F31F0A00030DC2 /* Supporting Files */,
@@ -237,6 +258,7 @@
 		59CD25C415F31F4E00030DC2 /* OpenSource */ = {
 			isa = PBXGroup;
 			children = (
+				592B4AD816060DEC00AD715E /* iCarousel */,
 				592B4AD416060CC500AD715E /* FXImageView */,
 				59CD25BC15F31F4300030DC2 /* JTRevealSidebarV2 */,
 			);
@@ -371,6 +393,8 @@
 				598E80D21605EADE00FCC935 /* AlbumCell.m in Sources */,
 				592B4AD116060CBC00AD715E /* FXImageView.m in Sources */,
 				592B4AD216060CBC00AD715E /* UIImage+FX.m in Sources */,
+				592B4AD716060DE400AD715E /* iCarousel.m in Sources */,
+				592B4AE51606166600AD715E /* CoverFlowViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
