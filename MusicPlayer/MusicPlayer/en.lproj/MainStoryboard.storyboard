@@ -14,22 +14,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" id="UXj-J4-S08">
+                                <rect key="frame" x="-5" y="0.0" width="326" height="305"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196078431372551" green="0.36078431372549019" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background_round.png" id="CGA-cu-TBB">
+                                <rect key="frame" x="48" y="48" width="225" height="225"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="noArtworkImage.png" id="XU9-cH-KJ4" customClass="FXImageView">
-                                <rect key="frame" x="60" y="61" width="200" height="200"/>
+                                <rect key="frame" x="78" y="78" width="165" height="165"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="5O3-sB-x3N">
-                                <rect key="frame" x="-2" y="-7" width="324" height="23"/>
+                                <rect key="frame" x="-2" y="298" width="324" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="volumeChanged:" destination="x9F-CJ-5Fj" eventType="valueChanged" id="D6i-hs-jUh"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="of6-dI-lKR">
-                                <rect key="frame" x="60" y="418" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="of6-dI-lKR">
+                                <rect key="frame" x="-4" y="355" width="43" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="button_previous.png">
+                                <state key="normal" image="button_previous_1.jpg">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -40,26 +49,11 @@
                                     <action selector="previousSong:" destination="x9F-CJ-5Fj" eventType="touchUpInside" id="Ouv-ao-9zz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WnZ-Ig-IZB">
-                                <rect key="frame" x="137" y="410" width="46" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal" image="button_play.png">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playPause:" destination="x9F-CJ-5Fj" eventType="touchUpInside" id="duP-qe-Rv8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hsN-gn-ebG">
-                                <rect key="frame" x="230" y="418" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="hsN-gn-ebG">
+                                <rect key="frame" x="279" y="355" width="43" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="button_next.png">
+                                <state key="normal" image="button_next_1.jpg">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -70,29 +64,29 @@
                                     <action selector="nextSong:" destination="x9F-CJ-5Fj" eventType="touchUpInside" id="A9V-DB-K26"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Kgn-OG-szV">
-                                <rect key="frame" x="20" y="302" width="280" height="27"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="California King Bed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Kgn-OG-szV">
+                                <rect key="frame" x="20" y="347" width="280" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <color key="textColor" red="0.36078431370000003" green="0.76078431369999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Album" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="aTE-rd-4yg">
-                                <rect key="frame" x="20" y="336" width="280" height="27"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rihanna" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="aTE-rd-4yg">
+                                <rect key="frame" x="37" y="376" width="240" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.36078431370000003" green="0.76078431369999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="0.6021897810218978" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="DIw-eT-WAe">
-                                <rect key="frame" x="20" y="370" width="280" height="27"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Graduation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="DIw-eT-WAe">
+                                <rect key="frame" x="43" y="401" width="234" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.92549019610000005" green="0.50980392159999999" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.70000000000000007" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="c0D-nt-t9u">
-                                <rect key="frame" x="270" y="41" width="51" height="17"/>
+                                <rect key="frame" x="283" y="21" width="38" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="lyrics_tag.png">
@@ -104,7 +98,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.88627457618713379" green="0.88627457618713379" blue="0.88627457618713379" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="thT-MV-kWJ"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -113,7 +107,6 @@
                         <outlet property="albumLabel" destination="aTE-rd-4yg" id="6aG-8T-7NU"/>
                         <outlet property="artistAlbum" destination="DIw-eT-WAe" id="7bw-Mf-zPM"/>
                         <outlet property="artworkImageView" destination="XU9-cH-KJ4" id="rrF-1N-kE8"/>
-                        <outlet property="playPauseButton" destination="WnZ-Ig-IZB" id="ECz-kf-iak"/>
                         <outlet property="songLabel" destination="Kgn-OG-szV" id="FFO-95-MdK"/>
                         <outlet property="volumeSlider" destination="5O3-sB-x3N" id="2en-hC-wcI"/>
                     </connections>
@@ -173,18 +166,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="fm8-cg-ZDd">
-                                <rect key="frame" x="20" y="167" width="80" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="2J5-Qn-ZUv">
-                                <rect key="frame" x="120" y="167" width="80" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="uo8-KD-Jtr">
-                                <rect key="frame" x="220" y="167" width="80" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Albums" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="hD8-rz-IrT">
                                 <rect key="frame" x="95" y="49" width="120" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -217,71 +198,12 @@
                     <connections>
                         <segue destination="8mr-KF-e2m" kind="relationship" relationship="viewControllers" id="FxB-gB-iU9"/>
                         <segue destination="V1b-wa-uHH" kind="relationship" relationship="viewControllers" id="rMe-Sm-fzF"/>
-                        <segue destination="Qo2-pp-4DV" kind="relationship" relationship="viewControllers" id="6Xy-4f-oQX"/>
                         <segue destination="626-QT-x3v" kind="relationship" relationship="viewControllers" id="yOh-cW-YKi"/>
                         <segue destination="yte-5T-nk7" kind="relationship" relationship="viewControllers" id="lH0-we-Gp4"/>
                     </connections>
                 </tabBarController>
             </objects>
             <point key="canvasLocation" x="-1742" y="-333"/>
-        </scene>
-        <!--Navigation Controller - Item-->
-        <scene sceneID="uBV-3K-5VO">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n1D-nI-Tw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="Qo2-pp-4DV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="1W7-f2-j4E"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iQG-5J-OVy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ZYJ-pS-rrI" kind="relationship" relationship="rootViewController" id="25x-Ck-l0W"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="-431" y="9"/>
-        </scene>
-        <!--Albums View Controller-->
-        <scene sceneID="cgO-JZ-yUM">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZEM-eq-dPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController wantsFullScreenLayout="YES" hidesBottomBarWhenPushed="YES" id="ZYJ-pS-rrI" customClass="AlbumsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1aA-7N-LxR">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlbumCell" textLabel="r33-4Z-rWd" style="IBUITableViewCellStyleDefault" id="GxJ-hU-FZK">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r33-4Z-rWd">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ZYJ-pS-rrI" id="n6C-yF-W7Z"/>
-                            <outlet property="delegate" destination="ZYJ-pS-rrI" id="bYT-PE-SYm"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="EzB-dY-1qM"/>
-                </tableViewController>
-            </objects>
-            <point key="canvasLocation" x="95" y="9"/>
         </scene>
         <!--Artists View Controller-->
         <scene sceneID="xXO-x9-y2R">
@@ -320,7 +242,7 @@
                     <navigationItem key="navigationItem" id="rN9-Jl-K45"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="102" y="634"/>
+            <point key="canvasLocation" x="110" y="14"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="tQM-Bs-gh5">
@@ -339,7 +261,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-439" y="627"/>
+            <point key="canvasLocation" x="-431" y="7"/>
         </scene>
         <!--Cover Flow View Controller-->
         <scene sceneID="yjh-Ne-jjG">
@@ -363,7 +285,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="36" y="1274"/>
+            <point key="canvasLocation" x="132" y="654"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="DLK-ah-s0F">
@@ -382,22 +304,19 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-431" y="1274"/>
+            <point key="canvasLocation" x="-423" y="654"/>
         </scene>
     </scenes>
     <resources>
-        <image name="button_next.png" width="51" height="51"/>
-        <image name="button_play.png" width="100" height="100"/>
-        <image name="button_previous.png" width="48" height="48"/>
+        <image name="background_round.png" width="453" height="452"/>
+        <image name="button_next_1.jpg" width="43" height="96"/>
+        <image name="button_previous_1.jpg" width="41" height="99"/>
         <image name="lyrics_tag.png" width="53" height="17"/>
         <image name="noArtworkImage.png" width="200" height="200"/>
     </resources>
     <classes>
         <class className="AlbumViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AlbumViewController.h"/>
-        </class>
-        <class className="AlbumsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlbumsViewController.h"/>
         </class>
         <class className="ArtistsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ArtistsViewController.h"/>

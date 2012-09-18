@@ -7,17 +7,28 @@
 //
 
 #import "ArtistsViewController.h"
-#import "AppDelegate.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "FXImageView.h"
+#import "AppDelegate.h"
 
 @interface ArtistsViewController ()
 
+@property (nonatomic, strong) UIButton *sideBarButton;
 @end
 
 @implementation ArtistsViewController
 
 @synthesize artists = _artists;
+@synthesize sideBarButton = _sideBarButton;
+
+#pragma mark - Reveal Sidebar
+
+- (void)revealLeftSidebar:(id)sender {
+	AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	[appDelegate revealLeftSidebar:sender];
+}
+
+#pragma mark - Life Cycle
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,11 +42,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(revealLeftSidebar:)];
-	
+	self.navigationController.navigationBarHidden = YES;
+		
 	MPMediaQuery *query = [MPMediaQuery artistsQuery];
 	self.artists = query.collections;
+	
 }
 
 - (void)viewDidUnload
@@ -48,13 +59,37 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)revealLeftSidebar:(id)sender {
-	AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-	[appDelegate revealLeftSidebar:sender];
+#pragma mark - Table view data source
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+	return 50;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+	UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+	
+	//
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
+	label.text = @"Artists";
+	label.font = [UIFont boldSystemFontOfSize:16];
+	label.textAlignment = UITextAlignmentCenter;
+	label.textColor = [UIColor colorWithRed:92.0/255.0 green:194.0/255.0 blue:209.0/255.0 alpha:1.0];
+	label.center = CGPointMake(headerView.bounds.size.width / 2, headerView.bounds.size.height / 2);
+	[headerView addSubview:label];
+	
+	// configure side bar button
+	if (!self.sideBarButton) {
+		self.sideBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
+		[self.sideBarButton setBackgroundImage:[UIImage imageNamed:@"sidebar_button.png"] forState:UIControlStateNormal];
+		[self.sideBarButton addTarget:self action:@selector(revealLeftSidebar:) forControlEvents:UIControlEventTouchUpInside];
+		self.sideBarButton.frame = CGRectMake(20, 20, 16, 16);
+	}
+	[headerView addSubview:self.sideBarButton];
 
-#pragma mark - Table view data source
+	return headerView;
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

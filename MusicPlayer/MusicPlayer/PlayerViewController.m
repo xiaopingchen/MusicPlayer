@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Jiang Xiao. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "PlayerViewController.h"
 #import "SidebarViewController.h"
 #import "AppDelegate.h"
@@ -14,9 +15,10 @@
 
 #define kSidebarWidth 130
 
-@interface PlayerViewController ()
+@interface PlayerViewController () 
 
 @property (nonatomic, strong) UIButton *sideBarButton;
+@property (nonatomic) BOOL isSpinning;
 
 - (void)registerMediaPlayerNotifications;
 - (void)removeMediaPlayerNotifications;
@@ -25,6 +27,7 @@
 @implementation PlayerViewController
 
 @synthesize sideBarButton = _sideBarButton;
+@synthesize isSpinning = _isSpinning;
 @synthesize musicPlayer = _musicPlayer;
 @synthesize artworkImageView = _artworkImageView;
 @synthesize songLabel = _songLabel;
@@ -37,10 +40,16 @@
 // change playPause button based on player state
 - (void)togglePlayPause
 {
+	self.isSpinning = NO;
+	
 	if (self.musicPlayer.playbackState == MPMusicPlaybackStatePlaying) {
+		[self startSpinning];
 		[self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
 	} else if (self.musicPlayer.playbackState == MPMusicPlaybackStatePaused) {
+		[self stopSpinning];
 		[self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
+	} else if (self.musicPlayer.playbackState == MPMusicPlaybackStateStopped) {
+		[self stopSpinning];
 	}
 }
 
@@ -123,13 +132,15 @@
     MPMusicPlaybackState playbackState = [self.musicPlayer playbackState];
 	
     if (playbackState == MPMusicPlaybackStatePaused) {
+		[self stopSpinning];
         [self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
 		
     } else if (playbackState == MPMusicPlaybackStatePlaying) {
-        [self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
+		[self startSpinning];
+		[self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
 		
     } else if (playbackState == MPMusicPlaybackStateStopped) {
-		
+		[self stopSpinning];
         [self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
         [self.musicPlayer stop];
     }
@@ -163,17 +174,14 @@
 	[self.sideBarButton setBackgroundImage:[UIImage imageNamed:@"sidebar_button.png"] forState:UIControlStateNormal];
 	[self.sideBarButton addTarget:self action:@selector(revealLeftSidebar:) forControlEvents:UIControlEventTouchUpInside];
 	self.sideBarButton.frame = CGRectMake(30, 30, 16, 16);
-	[self.view addSubview:self.sideBarButton];
-	
-	// setup music player
-	self.musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
-	[self.musicPlayer setQueueWithQuery:[MPMediaQuery songsQuery]];
-	self.volumeSlider.value = self.musicPlayer.volume;
-	[self togglePlayPause];
-	[self registerMediaPlayerNotifications];
-	
+//	[self.view addSubview:self.sideBarButton];
+		
 	//
-	[self setupArtwork];
+	self.artworkImageView.cornerRadius = self.artworkImageView.bounds.size.height / 2;
+	self.artworkImageView.shadowOffset = CGSizeMake(0.0f, 2.0f);
+	self.artworkImageView.shadowBlur = 5.0f;
+
+//	[self setupArtwork];
 	
 	// customize slider
 	UIImage *minImage = [[UIImage imageNamed:@"slider_min.png"]
@@ -182,6 +190,20 @@
 						 resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];	
 	[[UISlider appearance] setMaximumTrackImage:maxImage forState:UIControlStateNormal];
 	[[UISlider appearance] setMinimumTrackImage:minImage forState:UIControlStateNormal];
+	
+	// add gesture to artwork imageview
+	UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(playPause:)];
+	recognizer.numberOfTapsRequired = 1;
+	self.artworkImageView.userInteractionEnabled = YES;
+	[self.artworkImageView addGestureRecognizer:recognizer];
+	
+	// setup music player
+	self.musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
+	[self.musicPlayer setQueueWithQuery:[MPMediaQuery songsQuery]];
+	self.volumeSlider.value = self.musicPlayer.volume;
+	[self registerMediaPlayerNotifications];
+	[self togglePlayPause];
+
 }
 
 - (void)viewDidUnload
@@ -228,6 +250,35 @@
 		[self.musicPlayer play];
 	} else {
 		[self.musicPlayer pause];
+	}
+}
+
+#pragma mark - Spinning Animation
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+	
+}
+
+- (void)stopSpinning
+{
+	if (self.isSpinning) {
+		[self.artworkImageView.layer removeAnimationForKey:@"spinAnimation"];
+		self.isSpinning = NO;
+	}
+}
+
+- (void)startSpinning
+{
+	if (!self.isSpinning) {
+		CABasicAnimation* spinAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+		spinAnimation.toValue = [NSNumber numberWithFloat:2 * M_PI];
+		spinAnimation.duration = 4.0;
+		spinAnimation.delegate = self;
+		spinAnimation.autoreverses = YES;
+		spinAnimation.repeatCount = HUGE_VALF;
+		[self.artworkImageView.layer addAnimation:spinAnimation forKey:@"spinAnimation"];
+		self.isSpinning = YES;
 	}
 }
 
