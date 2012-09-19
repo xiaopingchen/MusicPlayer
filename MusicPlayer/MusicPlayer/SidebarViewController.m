@@ -49,6 +49,7 @@
 {
     [super viewDidLoad];
 	self.tableView.scrollEnabled = NO;
+	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -100,9 +101,49 @@
 	}
 	
     // Configure the cell...
+	UIColor *bgColor = nil;
+	CGRect buttonFrame;
+	
+	switch (indexPath.row) {
+		case 0:
+			buttonFrame = CGRectMake(0, 0, 54, 43);
+			bgColor = [UIColor colorWithRed:234.0/255.0 green:77/255.0 blue:104/255.0 alpha:1.0];
+			break;
+		case 1:
+			buttonFrame = CGRectMake(0, 0, 41, 41);
+			bgColor = [UIColor colorWithRed:157.0/255.0 green:77/255.0 blue:104/255.0 alpha:1.0];
+			break;
+		case 2:
+			buttonFrame = CGRectMake(0, 0, 50, 49);
+			bgColor = [UIColor colorWithRed:157/255.0 green:165/255.0 blue:104/255.0 alpha:1.0];
+			break;
+		case 3:
+			buttonFrame = CGRectMake(0, 0, 53, 47);
+			bgColor = [UIColor colorWithRed:220/255.0 green:128/255.0 blue:96/255.0 alpha:1.0];
+			break;
+		case 4:
+			buttonFrame = CGRectMake(0, 0, 62, 37);
+			bgColor = [UIColor colorWithRed:250/255.0 green:152/255.0 blue:87/255.0 alpha:1.0];
+			break;
+		case 5:
+			buttonFrame = CGRectMake(0, 0, 53, 45);
+			bgColor = [UIColor colorWithRed:240/255.0 green:236/255.0 blue:201/255.0 alpha:1.0];
+			break;
+			
+		default:
+			break;
+	}
 
-	NSString *imageName = [NSString stringWithFormat:@"sidebar_%d.png", indexPath.row + 1];
-	[cell.imageView setImage:[UIImage imageNamed:imageName]];
+	UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+	button.frame = buttonFrame;
+	button.center = CGPointMake(40, 40);
+	NSString *imageName = [NSString stringWithFormat:@"btn_home_%d.png", indexPath.row + 1];
+	[button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+	
+	UIView *bgView = [[UIView alloc] init];
+	bgView.backgroundColor = bgColor;
+	[bgView addSubview:button];
+	cell.backgroundView = bgView;
     return cell;
 }
 

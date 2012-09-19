@@ -171,10 +171,10 @@
 		
 	// configure side bar button
 	self.sideBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	[self.sideBarButton setBackgroundImage:[UIImage imageNamed:@"sidebar_button.png"] forState:UIControlStateNormal];
+	[self.sideBarButton setBackgroundImage:[UIImage imageNamed:@"button_sidebar.png"] forState:UIControlStateNormal];
 	[self.sideBarButton addTarget:self action:@selector(revealLeftSidebar:) forControlEvents:UIControlEventTouchUpInside];
-	self.sideBarButton.frame = CGRectMake(30, 30, 16, 16);
-//	[self.view addSubview:self.sideBarButton];
+	self.sideBarButton.frame = CGRectMake(20, 20, 18, 18);
+	[self.view addSubview:self.sideBarButton];
 		
 	//
 	self.artworkImageView.cornerRadius = self.artworkImageView.bounds.size.height / 2;
@@ -263,6 +263,7 @@
 - (void)stopSpinning
 {
 	if (self.isSpinning) {
+		self.artworkImageView.transform = [self.artworkImageView.layer.presentationLayer affineTransform];
 		[self.artworkImageView.layer removeAnimationForKey:@"spinAnimation"];
 		self.isSpinning = NO;
 	}
@@ -276,6 +277,7 @@
 		spinAnimation.duration = 4.0;
 		spinAnimation.delegate = self;
 		spinAnimation.autoreverses = YES;
+		spinAnimation.timingFunction =[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
 		spinAnimation.repeatCount = HUGE_VALF;
 		[self.artworkImageView.layer addAnimation:spinAnimation forKey:@"spinAnimation"];
 		self.isSpinning = YES;
