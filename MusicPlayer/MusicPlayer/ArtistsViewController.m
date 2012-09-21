@@ -100,7 +100,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 90;
+	return 60;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -121,9 +121,8 @@
     static NSString *CellIdentifier = @"ArtistCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	cell.textLabel.textColor = [UIColor colorWithRed:150/255.0 green:150/255.0 blue:150/255.0 alpha:1.0];
-//	cell.textLabel.numberOfLines = 0;
 	cell.textLabel.textColor = [UIColor whiteColor];
-    cell.textLabel.font = [UIFont fontWithName:@"Brush Script MT" size:16];
+    cell.textLabel.font = [UIFont fontWithName:@"Reyna" size:35];
 		
     // Configure the cell...
 	MPMediaItemCollection *artist = [self.artists objectAtIndex:indexPath.row];
@@ -141,37 +140,24 @@
 //    coverImage.shadowBlur = 5.0f;
 	coverImage.image = cover;
 	[cell addSubview:coverImage];
-	
-	/*
-	UILabel *artistName = [[UILabel alloc] initWithFrame:CGRectMake(120, 30, 200, 30)];
-	artistName.backgroundColor =[UIColor clearColor];
-	artistName.font = [UIFont boldSystemFontOfSize:16];
-	artistName.textColor = [UIColor colorWithRed:92.0/255.0 green:194.0/255.0 blue:209.0/255.0 alpha:1.0];
-	artistName.text = [song valueForProperty:MPMediaItemPropertyArtist];
-	[cell addSubview:artistName];
 
-	UILabel *albumName = [[UILabel alloc] initWithFrame:CGRectMake(120, 60, 200, 30)];
-	albumName.backgroundColor = [UIColor clearColor];
-	albumName.font = [UIFont boldSystemFontOfSize:14];
-	albumName.textColor = [UIColor colorWithRed:236.0/255.0 green:130.0/255.0 blue:153.0/255.0 alpha:1.0];
-	albumName.text = [song valueForProperty:MPMediaItemPropertyAlbumTitle];
-	[cell addSubview:albumName];
-	 */
-	
     return cell;
     }
+	
+	
     if (indexPath.row % 2 == 1) {
         static NSString *CellIdentifier = @"ArtistCellReverse";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         cell.textLabel.textColor = [UIColor colorWithRed:150/255.0 green:150/255.0 blue:150/255.0 alpha:1.0];
         //	cell.textLabel.numberOfLines = 0;
         cell.textLabel.textColor = [UIColor whiteColor];
-        cell.textLabel.font = [UIFont fontWithName:@"Brush Script MT" size:16];
+        cell.textLabel.font = [UIFont fontWithName:@"Reyna" size:35];
 		
         // Configure the cell...
         MPMediaItemCollection *artist = [self.artists objectAtIndex:indexPath.row];
         MPMediaItem *song = artist.items.lastObject;
-        cell.textLabel.text = [NSString stringWithFormat:@"%@               ",[[song valueForProperty:MPMediaItemPropertyArtist] uppercaseString]];
+		NSString *spaceString = @"                     ";
+        cell.textLabel.text = [NSString stringWithFormat:@"%@%@",[[song valueForProperty:MPMediaItemPropertyArtist] uppercaseString], spaceString];
         
         // Setup Artwork
         MPMediaItemArtwork *artWork = [song valueForProperty:MPMediaItemPropertyArtwork];
