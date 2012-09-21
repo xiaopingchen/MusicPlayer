@@ -67,7 +67,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 60;
+	return 90;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -78,6 +78,17 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
 	UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+	headerView.backgroundColor = [UIColor colorWithRed:220/255.0 green:128/255.0 blue:96/255.0 alpha:1.0];
+
+	
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+	label.text = @"Songs";
+	label.font = [UIFont fontWithName:@"Reyna" size:30];
+	label.textAlignment = UITextAlignmentCenter;
+	label.textColor = [UIColor whiteColor];
+	label.backgroundColor = [UIColor clearColor];
+	label.center = CGPointMake(headerView.bounds.size.width / 2, headerView.bounds.size.height / 2);
+	[headerView addSubview:label];
 	
 	// configure side bar button
 	if (!self.sideBarButton) {
@@ -113,6 +124,10 @@
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	cell.textLabel.textColor = [UIColor whiteColor];
 	cell.detailTextLabel.textColor = [UIColor whiteColor];
+	cell.textLabel.font = [UIFont fontWithName:@"Reyna" size:30];
+	cell.detailTextLabel.font = [UIFont fontWithName:@"Reyna" size:20];
+	cell.textLabel.adjustsFontSizeToFitWidth = YES;
+	cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
     
     // Configure the cell...
 	

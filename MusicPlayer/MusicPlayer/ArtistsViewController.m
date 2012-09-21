@@ -70,17 +70,16 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
 	UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+	headerView.backgroundColor = [UIColor colorWithRed:157/255.0 green:77/255.0 blue:104/255.0 alpha:1.0];
 	
-	/*
-	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
 	label.text = @"Artists";
-	label.font = [UIFont boldSystemFontOfSize:16];
+	label.font = [UIFont fontWithName:@"Reyna" size:30];
 	label.textAlignment = UITextAlignmentCenter;
-	label.textColor = [UIColor colorWithRed:92.0/255.0 green:194.0/255.0 blue:209.0/255.0 alpha:1.0];
+	label.textColor = [UIColor whiteColor];
 	label.backgroundColor = [UIColor clearColor];
 	label.center = CGPointMake(headerView.bounds.size.width / 2, headerView.bounds.size.height / 2);
 	[headerView addSubview:label];
-	 */
 	
 	// configure side bar button
 	if (!self.sideBarButton) {
@@ -100,7 +99,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 60;
+	return 80;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
