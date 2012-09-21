@@ -125,7 +125,7 @@
 	cell.textLabel.textColor = [UIColor whiteColor];
 	cell.detailTextLabel.textColor = [UIColor whiteColor];
 	cell.textLabel.font = [UIFont fontWithName:@"Reyna" size:30];
-	cell.detailTextLabel.font = [UIFont fontWithName:@"Reyna" size:20];
+	cell.detailTextLabel.font = [UIFont fontWithName:@"Reyna" size:15];
 	cell.textLabel.adjustsFontSizeToFitWidth = YES;
 	cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
     

@@ -131,6 +131,12 @@
 		cell.albumsLabel.frame = CGRectMake(20, 45, 222, 30);
 		cell.artistNameLabel.textAlignment = UITextAlignmentRight;
 		cell.albumsLabel.textAlignment = UITextAlignmentRight;
+	} else {
+		cell.coverImage.frame = CGRectMake(10, 10, 60, 60);
+		cell.artistNameLabel.frame = CGRectMake(78, 10, 222, 49);
+		cell.albumsLabel.frame = CGRectMake(78, 45, 222, 30);
+		cell.artistNameLabel.textAlignment = UITextAlignmentLeft;
+		cell.albumsLabel.textAlignment = UITextAlignmentLeft;
 	}
 		
     // Set Artist Name
