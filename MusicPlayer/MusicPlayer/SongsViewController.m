@@ -10,14 +10,16 @@
 #import "SongsViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "AppDelegate.h"
+#import "PlayerViewController.h"
 
 @interface SongsViewController ()
-
+@property (nonatomic, strong) UIButton *sideBarButton;
 @end
 
 @implementation SongsViewController
 
 @synthesize songs = _songs;
+@synthesize sideBarButton = _sideBarButton;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,9 +33,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	self.navigationController.navigationBarHidden = YES;
+	self.tabBarController.tabBar.hidden = YES;
 	
-	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(revealLeftSidebar:)];
-	
+	self.tableView.backgroundColor = [UIColor colorWithRed:220/255.0 green:128/255.0 blue:96/255.0 alpha:1.0];
+	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+		
 	// access songs from ipod library
 	MPMediaQuery *query = [MPMediaQuery songsQuery];
 	self.songs = query.items;
@@ -60,6 +65,35 @@
 
 #pragma mark - Table view data source
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return 60;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+	return 50;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+	UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+	
+	// configure side bar button
+	if (!self.sideBarButton) {
+		self.sideBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
+		[self.sideBarButton addTarget:self action:@selector(revealLeftSidebar:) forControlEvents:UIControlEventTouchUpInside];
+		self.sideBarButton.frame = CGRectMake(10, 10, 30, 30);
+	}
+	[headerView addSubview:self.sideBarButton];
+	
+	UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"button_sidebar.png"]];
+	imageView.frame = CGRectMake(20, 20, 16, 16);
+	[headerView addSubview:imageView];
+	
+	return headerView;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -74,15 +108,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"MediaItemCell";
+    static NSString *CellIdentifier = @"SongCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+	cell.textLabel.textColor = [UIColor whiteColor];
+	cell.detailTextLabel.textColor = [UIColor whiteColor];
     
     // Configure the cell...
 	
 	MPMediaItem *song = [self.songs objectAtIndex:indexPath.row];
-	MPMediaItemArtwork *artWork = [song valueForProperty: MPMediaItemPropertyArtwork];
-	cell.imageView.image = [artWork imageWithSize:cell.imageView.bounds.size];
+//	MPMediaItemArtwork *artWork = [song valueForProperty: MPMediaItemPropertyArtwork];
+//	cell.imageView.image = [artWork imageWithSize:cell.imageView.bounds.size];
     cell.textLabel.text = [song valueForProperty:MPMediaItemPropertyTitle];
+	cell.detailTextLabel.text = [song valueForProperty:MPMediaItemPropertyAlbumArtist];
     return cell;
 }
 
@@ -90,13 +128,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+	UINavigationController *navController = [self.tabBarController.viewControllers objectAtIndex:1];
+	PlayerViewController *playerViewController = (PlayerViewController *)navController.topViewController;
+	if (playerViewController.musicPlayer.playbackState == MPMusicPlaybackStatePlaying) {
+		[playerViewController.musicPlayer pause];
+	}
+	playerViewController.musicPlayer.nowPlayingItem = [self.songs objectAtIndex:indexPath.row];
+	[playerViewController.musicPlayer play];
+	
+	self.tabBarController.selectedIndex = 1;
 }
 
 @end

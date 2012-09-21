@@ -85,18 +85,22 @@
 	// configure side bar button
 	if (!self.sideBarButton) {
 		self.sideBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
-		[self.sideBarButton setBackgroundImage:[UIImage imageNamed:@"sidebar_button.png"] forState:UIControlStateNormal];
+//		[self.sideBarButton setBackgroundImage:[UIImage imageNamed:@"sidebar_button.png"] forState:UIControlStateNormal];
 		[self.sideBarButton addTarget:self action:@selector(revealLeftSidebar:) forControlEvents:UIControlEventTouchUpInside];
-		self.sideBarButton.frame = CGRectMake(20, 20, 16, 16);
+		self.sideBarButton.frame = CGRectMake(10, 10, 30, 30);
 	}
 	[headerView addSubview:self.sideBarButton];
+	
+	UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"button_sidebar.png"]];
+	imageView.frame = CGRectMake(20, 20, 16, 16);
+	[headerView addSubview:imageView];
 
 	return headerView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 50;
+	return 90;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -116,26 +120,25 @@
     static NSString *CellIdentifier = @"ArtistCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	cell.textLabel.textColor = [UIColor colorWithRed:150/255.0 green:150/255.0 blue:150/255.0 alpha:1.0];
-	cell.detailTextLabel.textColor = [UIColor colorWithRed:150/255.0 green:150/255.0 blue:150/255.0 alpha:1.0];
-	
+//	cell.textLabel.numberOfLines = 0;
+	cell.textLabel.textColor = [UIColor whiteColor];
+		
     // Configure the cell...
 	MPMediaItemCollection *artist = [self.artists objectAtIndex:indexPath.row];
 	MPMediaItem *song = artist.items.lastObject;
-	cell.textLabel.text = [song valueForProperty:MPMediaItemPropertyArtist];
-	cell.detailTextLabel.text = [song valueForProperty:MPMediaItemPropertyAlbumTitle];
+	cell.textLabel.text = [[song valueForProperty:MPMediaItemPropertyArtist] uppercaseString];
 	
-	
-	/* Setup Artwork
+	// Setup Artwork
 	MPMediaItemArtwork *artWork = [song valueForProperty:MPMediaItemPropertyArtwork];
-	UIImage *cover = [artWork imageWithSize:CGSizeMake(110, 110)];
+	UIImage *cover = [artWork imageWithSize:CGSizeMake(60, 60)];
 	
-	UIView *container = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 110, 110)];
-	container.backgroundColor = [UIColor clearColor];
-	FXImageView *coverImage = [[FXImageView alloc] initWithFrame:CGRectMake(10, 10, 100, 100)];
+	FXImageView *coverImage = [[FXImageView alloc] initWithFrame:CGRectMake(10, 10, 60, 60)];
+	coverImage.cornerRadius = coverImage.frame.size.width / 2;
+//	coverImage.backgroundColor = [UIColor clearColor];
+//    coverImage.shadowOffset = CGSizeMake(1.0f, 1.0f);
+//    coverImage.shadowBlur = 5.0f;
 	coverImage.image = cover;
-	[container addSubview:coverImage];
-	[cell addSubview:container];
-	 */
+	[cell addSubview:coverImage];
 	
 	/*
 	UILabel *artistName = [[UILabel alloc] initWithFrame:CGRectMake(120, 30, 200, 30)];

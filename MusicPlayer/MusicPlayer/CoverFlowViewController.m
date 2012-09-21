@@ -39,7 +39,7 @@
 	self.sideBarButton.frame = CGRectMake(20, 20, 16, 16);
 	[self.view addSubview:self.sideBarButton];
     
-	_carousel.type = iCarouselTypeCoverFlow2;
+	_carousel.type = iCarouselTypeCylinder;
 }
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel

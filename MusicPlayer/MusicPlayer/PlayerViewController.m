@@ -171,11 +171,14 @@
 		
 	// configure side bar button
 	self.sideBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	[self.sideBarButton setBackgroundImage:[UIImage imageNamed:@"button_sidebar.png"] forState:UIControlStateNormal];
 	[self.sideBarButton addTarget:self action:@selector(revealLeftSidebar:) forControlEvents:UIControlEventTouchUpInside];
-	self.sideBarButton.frame = CGRectMake(20, 20, 18, 18);
+	self.sideBarButton.frame = CGRectMake(10, 10, 30, 30);
 	[self.view addSubview:self.sideBarButton];
 		
+	UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"button_sidebar.png"]];
+	imageView.frame = CGRectMake(20, 20, 16, 16);
+	[self.view addSubview:imageView];
+	
 	//
 	self.artworkImageView.cornerRadius = self.artworkImageView.bounds.size.height / 2;
 	self.artworkImageView.shadowOffset = CGSizeMake(0.0f, 2.0f);
