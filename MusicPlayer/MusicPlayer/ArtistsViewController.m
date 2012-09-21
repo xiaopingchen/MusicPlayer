@@ -10,6 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "FXImageView.h"
 #import "AppDelegate.h"
+#import "ArtistCell.h"
 
 @interface ArtistsViewController ()
 
@@ -116,63 +117,40 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row % 2 == 0) {
     static NSString *CellIdentifier = @"ArtistCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	cell.textLabel.textColor = [UIColor colorWithRed:150/255.0 green:150/255.0 blue:150/255.0 alpha:1.0];
-	cell.textLabel.textColor = [UIColor whiteColor];
-    cell.textLabel.font = [UIFont fontWithName:@"Reyna" size:35];
+    ArtistCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	cell.artistNameLabel.adjustsFontSizeToFitWidth = YES;
+	cell.albumsLabel.adjustsFontSizeToFitWidth = YES;
+    cell.artistNameLabel.font = [UIFont fontWithName:@"Reyna" size:35];
+    cell.albumsLabel.font = [UIFont fontWithName:@"Reyna" size:15];
+	
+	// set artwork frame and labels
+	if (indexPath.row % 2 == 1) {
+		cell.coverImage.frame = CGRectMake(250, 10, 60, 60);
+		cell.artistNameLabel.frame = CGRectMake(20, 10, 222, 49);
+		cell.albumsLabel.frame = CGRectMake(20, 45, 222, 30);
+		cell.artistNameLabel.textAlignment = UITextAlignmentRight;
+		cell.albumsLabel.textAlignment = UITextAlignmentRight;
+	}
 		
-    // Configure the cell...
+    // Set Artist Name
 	MPMediaItemCollection *artist = [self.artists objectAtIndex:indexPath.row];
 	MPMediaItem *song = artist.items.lastObject;
-	cell.textLabel.text = [[song valueForProperty:MPMediaItemPropertyArtist] uppercaseString];
+	cell.artistNameLabel.text = [[song valueForProperty:MPMediaItemPropertyArtist] uppercaseString];
+	
+	// Set albums number
+	MPMediaPropertyPredicate *artistNamePredicate = [MPMediaPropertyPredicate predicateWithValue:[song valueForProperty:MPMediaItemPropertyArtist]  forProperty:MPMediaItemPropertyArtist];
+	MPMediaQuery *albumsForSinger = [MPMediaQuery albumsQuery];
+	[albumsForSinger addFilterPredicate:artistNamePredicate];
+	cell.albumsLabel.text = [NSString stringWithFormat:@"Album %d",albumsForSinger.collections.count];
 	
 	// Setup Artwork
 	MPMediaItemArtwork *artWork = [song valueForProperty:MPMediaItemPropertyArtwork];
 	UIImage *cover = [artWork imageWithSize:CGSizeMake(60, 60)];
-	
-	FXImageView *coverImage = [[FXImageView alloc] initWithFrame:CGRectMake(10, 10, 60, 60)];
-	coverImage.cornerRadius = coverImage.frame.size.width / 2;
-//	coverImage.backgroundColor = [UIColor clearColor];
-//    coverImage.shadowOffset = CGSizeMake(1.0f, 1.0f);
-//    coverImage.shadowBlur = 5.0f;
-	coverImage.image = cover;
-	[cell addSubview:coverImage];
+	cell.coverImage.cornerRadius = cell.coverImage.frame.size.width / 2;
+	cell.coverImage.image = cover;
 
     return cell;
-    }
-	
-	
-    if (indexPath.row % 2 == 1) {
-        static NSString *CellIdentifier = @"ArtistCellReverse";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        cell.textLabel.textColor = [UIColor colorWithRed:150/255.0 green:150/255.0 blue:150/255.0 alpha:1.0];
-        //	cell.textLabel.numberOfLines = 0;
-        cell.textLabel.textColor = [UIColor whiteColor];
-        cell.textLabel.font = [UIFont fontWithName:@"Reyna" size:35];
-		
-        // Configure the cell...
-        MPMediaItemCollection *artist = [self.artists objectAtIndex:indexPath.row];
-        MPMediaItem *song = artist.items.lastObject;
-		NSString *spaceString = @"                     ";
-        cell.textLabel.text = [NSString stringWithFormat:@"%@%@",[[song valueForProperty:MPMediaItemPropertyArtist] uppercaseString], spaceString];
-        
-        // Setup Artwork
-        MPMediaItemArtwork *artWork = [song valueForProperty:MPMediaItemPropertyArtwork];
-        UIImage *cover = [artWork imageWithSize:CGSizeMake(60, 60)];
-        
-        FXImageView *coverImage = [[FXImageView alloc] initWithFrame:CGRectMake(250, 10, 60, 60)];
-        coverImage.cornerRadius = coverImage.frame.size.width / 2;
-        //	coverImage.backgroundColor = [UIColor clearColor];
-        //    coverImage.shadowOffset = CGSizeMake(1.0f, 1.0f);
-        //    coverImage.shadowBlur = 5.0f;
-        coverImage.image = cover;
-        [cell addSubview:coverImage];
-        return cell;
-        
-    }
-    return nil;
 }
 
 

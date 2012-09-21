@@ -23,6 +23,7 @@
 		592B4AF6160628B300AD715E /* slider_max.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B4AF4160628B300AD715E /* slider_max.png */; };
 		592B4AF7160628B300AD715E /* slider_min.png in Resources */ = {isa = PBXBuildFile; fileRef = 592B4AF5160628B300AD715E /* slider_min.png */; };
 		594A1056160C50D2001D516C /* Reyna.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 594A1055160C50D2001D516C /* Reyna.ttf */; };
+		594A105A160C6139001D516C /* ArtistCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594A1059160C6139001D516C /* ArtistCell.m */; };
 		59732405160A13B900B373A6 /* btn_previous_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 59732404160A13B900B373A6 /* btn_previous_1.png */; };
 		59732407160A151100B373A6 /* button_sidebar.png in Resources */ = {isa = PBXBuildFile; fileRef = 59732406160A151100B373A6 /* button_sidebar.png */; };
 		5973240A160A15A600B373A6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59732409160A15A600B373A6 /* HomeViewController.m */; };
@@ -97,6 +98,8 @@
 		592B4AF4160628B300AD715E /* slider_max.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_max.png; sourceTree = "<group>"; };
 		592B4AF5160628B300AD715E /* slider_min.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_min.png; sourceTree = "<group>"; };
 		594A1055160C50D2001D516C /* Reyna.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reyna.ttf; sourceTree = "<group>"; };
+		594A1058160C6138001D516C /* ArtistCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistCell.h; sourceTree = "<group>"; };
+		594A1059160C6139001D516C /* ArtistCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistCell.m; sourceTree = "<group>"; };
 		59732404160A13B900B373A6 /* btn_previous_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_previous_1.png; sourceTree = "<group>"; };
 		59732406160A151100B373A6 /* button_sidebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_sidebar.png; path = ../button_sidebar.png; sourceTree = "<group>"; };
 		59732408160A15A600B373A6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 				59CD25C415F31F4E00030DC2 /* OpenSource */,
 				59CD25AE15F31F0A00030DC2 /* AppDelegate.h */,
 				59CD25AF15F31F0A00030DC2 /* AppDelegate.m */,
+				594A1058160C6138001D516C /* ArtistCell.h */,
+				594A1059160C6139001D516C /* ArtistCell.m */,
 				598E80D01605EADA00FCC935 /* AlbumCell.h */,
 				598E80D11605EADB00FCC935 /* AlbumCell.m */,
 				598E80D31605EE9400FCC935 /* AlbumCell.xib */,
@@ -503,6 +508,7 @@
 				592B4AE51606166600AD715E /* CoverFlowViewController.m in Sources */,
 				5973240A160A15A600B373A6 /* HomeViewController.m in Sources */,
 				F17DFA75160B0E0200F2B96E /* JSONKit.m in Sources */,
+				594A105A160C6139001D516C /* ArtistCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
