@@ -11,6 +11,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "AppDelegate.h"
 #import "PlayerViewController.h"
+#import "SongCell.h"
 
 @interface SongsViewController ()
 @property (nonatomic, strong) UIButton *sideBarButton;
@@ -120,22 +121,22 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"SongCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    SongCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
-	cell.textLabel.textColor = [UIColor whiteColor];
-	cell.detailTextLabel.textColor = [UIColor whiteColor];
-	cell.textLabel.font = [UIFont fontWithName:@"Reyna" size:30];
-	cell.detailTextLabel.font = [UIFont fontWithName:@"Reyna" size:15];
-	cell.textLabel.adjustsFontSizeToFitWidth = YES;
-	cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
+	cell.nameLabel.textColor = [UIColor whiteColor];
+	cell.artistLabel.textColor = [UIColor whiteColor];
+	cell.nameLabel.font = [UIFont fontWithName:@"Reyna" size:30];
+	cell.artistLabel.font = [UIFont fontWithName:@"Reyna" size:20];
+	cell.nameLabel.adjustsFontSizeToFitWidth = YES;
+	cell.artistLabel.adjustsFontSizeToFitWidth = YES;
     
     // Configure the cell...
 	
 	MPMediaItem *song = [self.songs objectAtIndex:indexPath.row];
 //	MPMediaItemArtwork *artWork = [song valueForProperty: MPMediaItemPropertyArtwork];
 //	cell.imageView.image = [artWork imageWithSize:cell.imageView.bounds.size];
-    cell.textLabel.text = [song valueForProperty:MPMediaItemPropertyTitle];
-	cell.detailTextLabel.text = [song valueForProperty:MPMediaItemPropertyAlbumArtist];
+    cell.nameLabel.text = [song valueForProperty:MPMediaItemPropertyTitle];
+	cell.artistLabel.text = [song valueForProperty:MPMediaItemPropertyAlbumArtist];
     return cell;
 }
 
