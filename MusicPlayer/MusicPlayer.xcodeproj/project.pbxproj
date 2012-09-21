@@ -71,6 +71,7 @@
 		59CD262E15F33B5000030DC2 /* pauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 59CD262915F33B5000030DC2 /* pauseButton.png */; };
 		59CD262F15F33B5000030DC2 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 59CD262A15F33B5000030DC2 /* playButton.png */; };
 		59CD263015F33B5000030DC2 /* PreviousButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 59CD262B15F33B5000030DC2 /* PreviousButton.png */; };
+		F17DFA75160B0E0200F2B96E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F17DFA74160B0E0200F2B96E /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,6 +158,8 @@
 		59CD262915F33B5000030DC2 /* pauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseButton.png; sourceTree = "<group>"; };
 		59CD262A15F33B5000030DC2 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
 		59CD262B15F33B5000030DC2 /* PreviousButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PreviousButton.png; sourceTree = "<group>"; };
+		F17DFA73160B0E0200F2B96E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		F17DFA74160B0E0200F2B96E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +306,7 @@
 		59CD25C415F31F4E00030DC2 /* OpenSource */ = {
 			isa = PBXGroup;
 			children = (
+				F17DFA71160B0DE000F2B96E /* JSON */,
 				592B4AD816060DEC00AD715E /* iCarousel */,
 				592B4AD416060CC500AD715E /* FXImageView */,
 				59CD25BC15F31F4300030DC2 /* JTRevealSidebarV2 */,
@@ -343,6 +347,15 @@
 				59CD262B15F33B5000030DC2 /* PreviousButton.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		F17DFA71160B0DE000F2B96E /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				F17DFA73160B0E0200F2B96E /* JSONKit.h */,
+				F17DFA74160B0E0200F2B96E /* JSONKit.m */,
+			);
+			name = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,6 +494,7 @@
 				592B4AD716060DE400AD715E /* iCarousel.m in Sources */,
 				592B4AE51606166600AD715E /* CoverFlowViewController.m in Sources */,
 				5973240A160A15A600B373A6 /* HomeViewController.m in Sources */,
+				F17DFA75160B0E0200F2B96E /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
