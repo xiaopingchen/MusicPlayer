@@ -117,11 +117,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row % 2 == 0) {
     static NSString *CellIdentifier = @"ArtistCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	cell.textLabel.textColor = [UIColor colorWithRed:150/255.0 green:150/255.0 blue:150/255.0 alpha:1.0];
 //	cell.textLabel.numberOfLines = 0;
 	cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.font = [UIFont fontWithName:@"Brush Script MT" size:16];
 		
     // Configure the cell...
 	MPMediaItemCollection *artist = [self.artists objectAtIndex:indexPath.row];
@@ -157,6 +159,35 @@
 	 */
 	
     return cell;
+    }
+    if (indexPath.row % 2 == 1) {
+        static NSString *CellIdentifier = @"ArtistCellReverse";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        cell.textLabel.textColor = [UIColor colorWithRed:150/255.0 green:150/255.0 blue:150/255.0 alpha:1.0];
+        //	cell.textLabel.numberOfLines = 0;
+        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.textLabel.font = [UIFont fontWithName:@"Brush Script MT" size:16];
+		
+        // Configure the cell...
+        MPMediaItemCollection *artist = [self.artists objectAtIndex:indexPath.row];
+        MPMediaItem *song = artist.items.lastObject;
+        cell.textLabel.text = [NSString stringWithFormat:@"%@               ",[[song valueForProperty:MPMediaItemPropertyArtist] uppercaseString]];
+        
+        // Setup Artwork
+        MPMediaItemArtwork *artWork = [song valueForProperty:MPMediaItemPropertyArtwork];
+        UIImage *cover = [artWork imageWithSize:CGSizeMake(60, 60)];
+        
+        FXImageView *coverImage = [[FXImageView alloc] initWithFrame:CGRectMake(250, 10, 60, 60)];
+        coverImage.cornerRadius = coverImage.frame.size.width / 2;
+        //	coverImage.backgroundColor = [UIColor clearColor];
+        //    coverImage.shadowOffset = CGSizeMake(1.0f, 1.0f);
+        //    coverImage.shadowBlur = 5.0f;
+        coverImage.image = cover;
+        [cell addSubview:coverImage];
+        return cell;
+        
+    }
+    return nil;
 }
 
 

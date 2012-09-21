@@ -72,6 +72,7 @@
 		59CD262F15F33B5000030DC2 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 59CD262A15F33B5000030DC2 /* playButton.png */; };
 		59CD263015F33B5000030DC2 /* PreviousButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 59CD262B15F33B5000030DC2 /* PreviousButton.png */; };
 		F17DFA75160B0E0200F2B96E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F17DFA74160B0E0200F2B96E /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F17DFA7B160C317B00F2B96E /* Brush Script.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F17DFA7A160C317B00F2B96E /* Brush Script.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +161,7 @@
 		59CD262B15F33B5000030DC2 /* PreviousButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PreviousButton.png; sourceTree = "<group>"; };
 		F17DFA73160B0E0200F2B96E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		F17DFA74160B0E0200F2B96E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		F17DFA7A160C317B00F2B96E /* Brush Script.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Brush Script.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +284,7 @@
 		59CD25A615F31F0A00030DC2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F17DFA7A160C317B00F2B96E /* Brush Script.ttf */,
 				59CD262615F33B5000030DC2 /* Images */,
 				59CD25A715F31F0A00030DC2 /* MusicPlayer-Info.plist */,
 				59CD25A815F31F0A00030DC2 /* InfoPlist.strings */,
@@ -452,6 +455,7 @@
 				5973241C160A2B2E00B373A6 /* btn_home_4.png in Resources */,
 				5973241D160A2B2E00B373A6 /* btn_home_5.png in Resources */,
 				5973241E160A2B2E00B373A6 /* btn_home_6.png in Resources */,
+				F17DFA7B160C317B00F2B96E /* Brush Script.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
