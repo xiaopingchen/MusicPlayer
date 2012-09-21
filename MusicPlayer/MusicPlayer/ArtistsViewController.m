@@ -164,14 +164,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	/*
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-	UIColor *color = [UIColor colorWithRed:157/250.0 green:77/250.0 blue:104/250.0 alpha:1.0];
-	UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 50)];
-	aView.backgroundColor = color;
-	cell.contentView.backgroundColor = [UIColor colorWithRed:215/255.0 green:215/255.0 blue:216/255.0 alpha:1.0];
-	[cell.contentView addSubview:aView];
-	*/
+	
 }
 
 @end

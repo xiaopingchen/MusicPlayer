@@ -1,6 +1,7 @@
 
 #import "CoverFlowViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import "AllbumDetailViewController.h"
 #import "AppDelegate.h"
 
 @interface CoverFlowViewController ()
@@ -72,6 +73,23 @@
 
     return view;
 }
+
+#pragma mark -
+
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+{
+	MPMediaItemCollection *album = [self.albums objectAtIndex:index];
+	MPMediaItem *song = album.items.lastObject;
+	NSLog(@"%@", [song valueForProperty:MPMediaItemPropertyAlbumTitle]);
+	
+	AllbumDetailViewController *advc = [[AllbumDetailViewController alloc] init];
+	advc.songs = album.items;
+	
+	[self.navigationController pushViewController:advc animated:YES];
+}
+
+
+#pragma mark -
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

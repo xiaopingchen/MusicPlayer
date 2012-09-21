@@ -11,6 +11,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <SEMasonryView/SEMasonryCell.h>
 #import "AlbumCell.h"
+#import "AllbumDetailViewController.h"
 
 @interface AlbumViewController ()
 
@@ -78,6 +79,11 @@
 	MPMediaItemCollection *album = [self.albums objectAtIndex:index];
 	MPMediaItem *song = album.items.lastObject;
 	NSLog(@"%@", [song valueForProperty:MPMediaItemPropertyAlbumTitle]);
+	
+	AllbumDetailViewController *advc = [[AllbumDetailViewController alloc] init];
+	advc.songs = album.items;
+	
+	[self.navigationController pushViewController:advc animated:YES];
 }
 
 
