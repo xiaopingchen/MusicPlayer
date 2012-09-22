@@ -33,7 +33,6 @@
 @synthesize songLabel = _songLabel;
 @synthesize albumLabel = _albumLabel;
 @synthesize artistAlbum = _artistAlbum;
-@synthesize playPauseButton = _playPauseButton;
 @synthesize volumeSlider = _volumeSlider;
 
 
@@ -44,10 +43,8 @@
 	
 	if (self.musicPlayer.playbackState == MPMusicPlaybackStatePlaying) {
 		[self startSpinning];
-		[self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
 	} else if (self.musicPlayer.playbackState == MPMusicPlaybackStatePaused) {
 		[self stopSpinning];
-		[self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
 	} else if (self.musicPlayer.playbackState == MPMusicPlaybackStateStopped) {
 		[self stopSpinning];
 	}
@@ -133,15 +130,12 @@
 	
     if (playbackState == MPMusicPlaybackStatePaused) {
 		[self stopSpinning];
-        [self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
 		
     } else if (playbackState == MPMusicPlaybackStatePlaying) {
 		[self startSpinning];
-		[self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
 		
     } else if (playbackState == MPMusicPlaybackStateStopped) {
 		[self stopSpinning];
-        [self.playPauseButton setImage:[UIImage imageNamed:@"button_play.png"] forState:UIControlStateNormal];
         [self.musicPlayer stop];
     }
 }
@@ -215,7 +209,6 @@
 	[self setSongLabel:nil];
 	[self setAlbumLabel:nil];
 	[self setArtistAlbum:nil];
-	[self setPlayPauseButton:nil];
 	[self setVolumeSlider:nil];
 	[self removeMediaPlayerNotifications];
     [super viewDidUnload];
@@ -246,14 +239,6 @@
 
 - (IBAction)previousSong:(id)sender {
 	[self.musicPlayer skipToPreviousItem];
-}
-
-- (IBAction)playPause:(id)sender {
-	if (self.musicPlayer.playbackState == MPMusicPlaybackStatePaused) {
-		[self.musicPlayer play];
-	} else {
-		[self.musicPlayer pause];
-	}
 }
 
 #pragma mark - Spinning Animation

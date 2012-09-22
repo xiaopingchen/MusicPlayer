@@ -214,6 +214,50 @@
 			name = iCarousel;
 			sourceTree = "<group>";
 		};
+		59337413160DA49C0025DDC9 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				594A1058160C6138001D516C /* ArtistCell.h */,
+				594A1059160C6139001D516C /* ArtistCell.m */,
+				594A105B160C722D001D516C /* SongCell.h */,
+				594A105C160C722D001D516C /* SongCell.m */,
+				598E80D01605EADA00FCC935 /* AlbumCell.h */,
+				598E80D11605EADB00FCC935 /* AlbumCell.m */,
+				598E80D31605EE9400FCC935 /* AlbumCell.xib */,
+			);
+			name = "Custom Cell";
+			sourceTree = "<group>";
+		};
+		59337415160DA4B70025DDC9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F17DFA7A160C317B00F2B96E /* Brush Script.ttf */,
+				594A1055160C50D2001D516C /* Reyna.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		59337416160DA4F00025DDC9 /* Main View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				59732408160A15A600B373A6 /* HomeViewController.h */,
+				59732409160A15A600B373A6 /* HomeViewController.m */,
+				59CD25C515F31F9900030DC2 /* PlayerViewController.h */,
+				59CD25C615F31F9900030DC2 /* PlayerViewController.m */,
+				59CD262315F33ACC00030DC2 /* SongsViewController.h */,
+				59CD262415F33ACC00030DC2 /* SongsViewController.m */,
+				59CD261D15F33A9D00030DC2 /* AlbumsViewController.h */,
+				59CD261E15F33A9D00030DC2 /* AlbumsViewController.m */,
+				598E80BC1605DC8800FCC935 /* AlbumViewController.h */,
+				598E80BD1605DC8800FCC935 /* AlbumViewController.m */,
+				59CD262015F33ABB00030DC2 /* ArtistsViewController.h */,
+				59CD262115F33ABB00030DC2 /* ArtistsViewController.m */,
+				592B4AE31606166600AD715E /* CoverFlowViewController.h */,
+				592B4AE41606166600AD715E /* CoverFlowViewController.m */,
+			);
+			name = "Main View Controllers";
+			sourceTree = "<group>";
+		};
 		598E80A21605DABB00FCC935 /* sidebars */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,36 +310,15 @@
 		59CD25A515F31F0A00030DC2 /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				59337413160DA49C0025DDC9 /* Custom Cell */,
 				59CD25C415F31F4E00030DC2 /* OpenSource */,
-				59CD25AE15F31F0A00030DC2 /* AppDelegate.h */,
-				59CD25AF15F31F0A00030DC2 /* AppDelegate.m */,
-				594A1058160C6138001D516C /* ArtistCell.h */,
-				594A1059160C6139001D516C /* ArtistCell.m */,
-				594A105B160C722D001D516C /* SongCell.h */,
-				594A105C160C722D001D516C /* SongCell.m */,
-				598E80D01605EADA00FCC935 /* AlbumCell.h */,
-				598E80D11605EADB00FCC935 /* AlbumCell.m */,
-				598E80D31605EE9400FCC935 /* AlbumCell.xib */,
-				59CD25B115F31F0A00030DC2 /* MainStoryboard.storyboard */,
-				59732408160A15A600B373A6 /* HomeViewController.h */,
-				59732409160A15A600B373A6 /* HomeViewController.m */,
-				59CD25C515F31F9900030DC2 /* PlayerViewController.h */,
-				59CD25C615F31F9900030DC2 /* PlayerViewController.m */,
-				59CD262315F33ACC00030DC2 /* SongsViewController.h */,
-				59CD262415F33ACC00030DC2 /* SongsViewController.m */,
-				59CD261D15F33A9D00030DC2 /* AlbumsViewController.h */,
-				59CD261E15F33A9D00030DC2 /* AlbumsViewController.m */,
-				598E80BC1605DC8800FCC935 /* AlbumViewController.h */,
-				598E80BD1605DC8800FCC935 /* AlbumViewController.m */,
-				59CD262015F33ABB00030DC2 /* ArtistsViewController.h */,
-				59CD262115F33ABB00030DC2 /* ArtistsViewController.m */,
-				592B4AE31606166600AD715E /* CoverFlowViewController.h */,
-				592B4AE41606166600AD715E /* CoverFlowViewController.m */,
+				59337416160DA4F00025DDC9 /* Main View Controllers */,
 				594A105E160C7543001D516C /* AllbumDetailViewController.h */,
 				594A105F160C7543001D516C /* AllbumDetailViewController.m */,
 				594A1060160C7543001D516C /* AllbumDetailViewController.xib */,
 				59CD25C715F31F9900030DC2 /* SidebarViewController.h */,
 				59CD25C815F31F9900030DC2 /* SidebarViewController.m */,
+				59CD25B115F31F0A00030DC2 /* MainStoryboard.storyboard */,
 				59CD25A615F31F0A00030DC2 /* Supporting Files */,
 			);
 			path = MusicPlayer;
@@ -304,9 +327,10 @@
 		59CD25A615F31F0A00030DC2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F17DFA7A160C317B00F2B96E /* Brush Script.ttf */,
-				594A1055160C50D2001D516C /* Reyna.ttf */,
 				59CD262615F33B5000030DC2 /* Images */,
+				59337415160DA4B70025DDC9 /* Fonts */,
+				59CD25AE15F31F0A00030DC2 /* AppDelegate.h */,
+				59CD25AF15F31F0A00030DC2 /* AppDelegate.m */,
 				59CD25A715F31F0A00030DC2 /* MusicPlayer-Info.plist */,
 				59CD25A815F31F0A00030DC2 /* InfoPlist.strings */,
 				59CD25AB15F31F0A00030DC2 /* main.m */,
@@ -341,6 +365,7 @@
 		59CD262615F33B5000030DC2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				598E80A21605DABB00FCC935 /* sidebars */,
 				59732413160A2B2E00B373A6 /* btn_home_1.png */,
 				59732414160A2B2E00B373A6 /* btn_home_2.png */,
 				59732415160A2B2E00B373A6 /* btn_home_3.png */,
@@ -351,7 +376,6 @@
 				5973240D160A280100B373A6 /* bg_home.png */,
 				59732406160A151100B373A6 /* button_sidebar.png */,
 				59732404160A13B900B373A6 /* btn_previous_1.png */,
-				598E80A21605DABB00FCC935 /* sidebars */,
 				591C118F1608B8AD004806F1 /* button_next_1.jpg */,
 				591C11901608B8AD004806F1 /* button_previous_1.jpg */,
 				591C118C1608B6CD004806F1 /* background_round.png */,

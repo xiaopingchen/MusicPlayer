@@ -17,12 +17,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *songLabel;
 @property (weak, nonatomic) IBOutlet UILabel *albumLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistAlbum;
-@property (weak, nonatomic) IBOutlet UIButton *playPauseButton;
 @property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
 
 - (IBAction)volumeChanged:(id)sender;
 - (IBAction)nextSong:(id)sender;
 - (IBAction)previousSong:(id)sender;
-- (IBAction)playPause:(id)sender;
 
 @end
